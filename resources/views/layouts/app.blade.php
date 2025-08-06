@@ -109,7 +109,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </a>
               </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="/about" class="nav-link">
               <i class="nav-icon fas fa-user"></i>
               <p>
                 Tentang
@@ -117,7 +117,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="/contact" class="nav-link">
               <i class="nav-icon fas fa-phone"></i>
               <p>
                 kontak

@@ -54,6 +54,9 @@
           <li class="nav-item">
             <a class="nav-link fw-bolder" href="contact">Contact</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link fw-bolder" href="dashboard">Kembali</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -77,9 +80,7 @@
     <!-- contact -->
     <div class="contact mb-5">
         <div class="maps">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.9008564650267!2d107.61650741431694!3d-6.90245886946713!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e64c5e8866e5%3A0x37be7ac9d575f7ed!2sGedung%20Sate!5e0!3m2!1sid!2sid!4v1644295540501!5m2!1sid!2sid"
-                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15868.42709522611!2d106.51505766873143!3d-6.116326399999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e41ff56c3f042f3%3A0xa8ccbac2d1d1e815!2sREMAP%20ECU%20HONDA%20(%20CRITICAL%20PERFORMANCE)!5e0!3m2!1sid!2sid!4v1754468715852!5m2!1sid!2sid" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         <div class="container mt-5">
             <div class="row">
@@ -92,9 +93,7 @@
                                     <div class="col-md-4">
                                         <i class="fa fa-map-marker-alt fa-2x primary float-start me-4"></i>
                                         <h4 class="fw-bolder">Location</h4>
-                                        <p class="ms-5">Jl. Diponegoro No.22, Citarum, Kec. Bandung Wetan, Kota Bandung,
-                                            Jawa
-                                            Barat 40115</p>
+                                        <p class="ms-5">Griya Artha rajeg blok j5/4, Kabupaten Tangerang, Banten 15540</p>
                                     </div>
                                     <div class="col-md-4">
                                         <i class="fa fa-envelope fa-2x primary float-start me-3"></i>
@@ -153,7 +152,7 @@
                 <div class="row">
                     <div class="col-md-1"></div>
                     <div class="col-md-3">
-                        <h4 class="fw-bold">COMPANY</h2>
+                        <h4 class="fw-bold">Critical Performance</h2>
                             <p>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Repeliat
                                 consequuntur magnam commodi voluptatem quas? Itaque quo obcaecati
@@ -164,7 +163,7 @@
                             <strong>Email</strong> : <span>info@company.org </span>
                     </div>
                     <div class="col-md-2">
-                        <h4 class="fw-bold">Our Services</h2>
+                        <h4 class="fw-bold">Service Ecu</h2>
                             <ul class="list-group list-unstyled">
                                 <li class="list-item">
                                     <a href="" class="text-decoration-none text-white">

@@ -6,6 +6,8 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TestimonialController;
+use App\Http\Controllers\PortfolioController;
+use App\Http\Controllers\ClientController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index']);
@@ -25,3 +27,5 @@ Route::get('/dashboard', [DashboarDcONTROLLER::class, 'index'])->middleware('aut
 Route::resource('sliders', SliderController::class)->middleware('auth');
 Route::resource('services', ServiceController::class)->middleware('auth');
 Route::resource('testimonials', TestimonialController::class)->middleware('auth');
+Route::resource('portfolios', PortfolioController::class)->middleware('auth');
+Route::resource('clients', ClientController::class)->middleware('auth');

@@ -36,9 +36,9 @@ class HomeController extends Controller
         return view('home.team');
     }
 
-    public function testimonials()
+    public function testimoni()
     {
-        return view('home.testimonials');
+        return view('home.testimoni');
     }
         
 }

@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
-@section ('title', 'Data Slider')
+@section ('title', 'Data Testimonial')
 
 @section ('content')
 
 <div class="container">
-    <a href=/sliders/create class=" btn btn-primary mb-3">Tambah Data</a>
+    <a href=/testimonials/create class=" btn btn-primary mb-3">Tambah Data</a>
     @if ($message = Session::get('message'))
     <div class="alert alert-success">
         <strong>Berhasil</strong>
@@ -17,7 +17,7 @@
     <div class="table-responsive">
         <table class="table table-bordered table-hover table-striped">
             <thead>
-                <tr>
+                <tr> 
                     <th>No</th>
                     <th>Judul</th>
                     <th>Deskripsi</th>
@@ -29,18 +29,18 @@
                 @php
                     $i=1
                 @endphp
-                @foreach ($sliders as $slider)
+                @foreach ($testimonials as $testimonial)
                 <tr>
                 <td>{{ $i++ }}</td>
-                <td>{{$slider->title}}</td>
-                <td>{{$slider->description}}</td>
+                <td>{{$testimonial->title}}</td>
+                <td>{{$testimonial->description}}</td>
                 <td>
-                    <img src="/image/{{$slider->image}}" alt="" class="img-fluid" width="60">
+                    <img src="/image/{{$testimonial->image}}" alt="" class="img-fluid" width="60">
                 </td>
                 <td>
-                    <a href="{{ route('sliders.edit', $slider->id) }}" class="btn btn-warning">edit</a>
+                    <a href="{{ route('testimonials.edit', $testimonial->id) }}" class="btn btn-warning">edit</a>
 
-                    <form action="{{route('sliders.destroy', $slider->id)}}" method="POST">
+                    <form action="{{route('testimonials.destroy', $testimonial->id)}}" method="POST">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger">Hapus</button>

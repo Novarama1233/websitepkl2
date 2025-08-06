@@ -3,18 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Slider;
+use App\Models\Service;
 
-class SliderController extends Controller
+class ServiceController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $sliders = Slider::all();
+        $services = Service::all();
 
-        return view('slider.index', compact('sliders'));
+        return view('service.index', compact('services'));
     }
 
     /**
@@ -22,7 +22,7 @@ class SliderController extends Controller
      */
     public function create()
     {
-        return view('slider.create');
+        return view('service.create');
     }
 
     /**
@@ -43,15 +43,15 @@ class SliderController extends Controller
             $input['image'] = $imageName;
         }
 
-        Slider::create($input);
+        Service::create($input);
 
-        return redirect('/sliders')->with('message', 'Data Berhasil Ditambahkan');
+        return redirect('/services')->with('message', 'Data Berhasil Ditambahkan');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Service $service)
     {
         //
     }
@@ -59,15 +59,15 @@ class SliderController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Slider $slider)
+    public function edit(Service $service)
     {
-        return view('slider.edit', compact('slider'));
+        return view('service.edit', compact('service'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Slider $slider)
+    public function update(Request $request, Service $service)
 {
     $request->validate([
         'title' => 'required',
@@ -86,19 +86,19 @@ class SliderController extends Controller
         unset($input['image']);
     }
 
-    $slider->update($input); //
+    $service->update($input); //
 
-    return redirect('/sliders')->with('message', 'Data Berhasil Diedit');
+    return redirect('/services')->with('message', 'Data Berhasil Diedit');
 }
 
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Slider $slider)
+    public function destroy(Service $service)
     {
-        $slider->delete();
+        $service->delete();
 
-        return redirect('/sliders')->with('message', 'Data Berhasil Dihapus');
+        return redirect('/services')->with('message', 'Data Berhasil Dihapus');
     }
 }

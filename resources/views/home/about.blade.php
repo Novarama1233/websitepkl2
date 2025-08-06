@@ -41,7 +41,7 @@
               <li><a class="dropdown-item" href="about">About Us</a></li>
               <li><a class="dropdown-item" href="team">Team</a></li>
               <li>
-                <a class="dropdown-item" href="testimonials">Testimonials</a>
+                <a class="dropdown-item" href="testioni">Testimonials</a>
               </li>
             </ul>
           </li>

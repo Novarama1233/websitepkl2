@@ -8,6 +8,7 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\TeamController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index']);
@@ -29,3 +30,4 @@ Route::resource('services', ServiceController::class)->middleware('auth');
 Route::resource('testimonials', TestimonialController::class)->middleware('auth');
 Route::resource('portfolios', PortfolioController::class)->middleware('auth');
 Route::resource('clients', ClientController::class)->middleware('auth');
+Route::resource('teams', TeamController::class)->middleware('auth');

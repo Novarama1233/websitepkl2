@@ -70,7 +70,9 @@
                 <h2>Portfolio</h2>
                 <ol class="d-flex list-unstyled">
                     <li>Home</li>
-                    <li>Portfolio</li>
+                    <li>
+                        <a href="portfolios">Portfolio</a>
+                    </li>
                 </ol>
             </div>
         </div>

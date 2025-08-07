@@ -108,6 +108,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <p>Data Clients</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="/teams" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Data Teams</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/clients" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Data Clients</p>
+                </a>
+              </li>
           <li class="nav-item">
             <a href="/about" class="nav-link">
               <i class="nav-icon fas fa-user"></i>

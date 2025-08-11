@@ -70,9 +70,9 @@ class AboutController extends Controller
         $destinationPath = 'image/';
         $imageName = $image->getClientOriginalName();
         $image->move($destinationPath, $imageName);
-        $input['image'] = $imageName;
+        $input['logo'] = $imageName;
     } else {
-        unset($input['image']);
+        unset($input['logo']);
     }
 
     $about->update($input);

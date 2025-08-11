@@ -51,9 +51,33 @@ class AboutController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, About $about)
+    public function update(Request $request, $id)
     {
-        //
+        $about = About::find($id);
+        $request->validate([
+        'name' => 'required',
+        'description' => 'required',
+        'alamat' => 'required',
+        'email' => 'required',
+        'telepon' => 'required',
+        'maps_emded' => 'required',
+        'logo' => 'image',
+    ]);
+
+    $input = $request->all();
+
+    if ($image = $request->file('logo')) {
+        $destinationPath = 'image/';
+        $imageName = $image->getClientOriginalName();
+        $image->move($destinationPath, $imageName);
+        $input['image'] = $imageName;
+    } else {
+        unset($input['image']);
+    }
+
+    $about->update($input);
+
+    return redirect('/about')->with('message', 'Data Berhasil Diedit');
     }
 
     /**

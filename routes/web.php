@@ -34,4 +34,4 @@ Route::resource('clients', ClientController::class)->middleware('auth');
 Route::resource('teams', TeamController::class)->middleware('auth');
 
 Route::get('/about', [AboutController::class, 'index'])->middleware('auth');
-Route::post('/about', [AboutController::class, 'update'])->middleware('auth');
+Route::put('/about/{id}', [AboutController::class, 'update'])->middleware('auth');

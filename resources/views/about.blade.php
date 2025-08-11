@@ -7,7 +7,14 @@
 <div class="container">
     <div class="row">  
         <div class="col-md-12">
-            <form action="/about" method="POST" enctype="multipart/form-data">
+            @if ($message = Session::get('message'))
+                <div class="alert alert-success">
+                    <strong>Berhasil</strong>
+                    <p>{{$message}}</p>
+                </div>
+
+            @endif
+            <form action="/about/{{ $about->id }}" method="POST" enctype="multipart/form-data">
                 @method('PUT')
                 @csrf 
                 <div class="form-group">
@@ -48,7 +55,7 @@
                 @enderror
                 <div class="form-group">
                     <label for="">Maps Emded</label>
-                    <textarea name="maps_emded" id="" cols="30" rows="10" class="form-control" placeholder="Maps Emded">{{$about->maps_emded}}
+                    <textarea name="maps_emded" id="" cols="30" rows="10" class="form-control" placeholder="Maps Emded">{{$about->maps_emded}}</textarea>
                 </div>
                 @error('maps_emded')
                 <small style="color:red">{{$message}}</small>
@@ -58,7 +65,7 @@
                     <label for="">Gambar</label>
                     <input type="file" class="form-control" name="logo">
                 </div>
-                @error('maps_emded')
+                @error('image')
                 <small style="color:red">{{$message}}</small>
                 @enderror
                 <div class="form-group">

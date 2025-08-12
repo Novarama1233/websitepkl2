@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section ('title', 'Data About')
+@section ('title', 'Data kontak')
 
 @section ('content')
 
@@ -14,58 +14,66 @@
                 </div>
 
             @endif
-            <form action="/about/{{ $about->id }}" method="POST" enctype="multipart/form-data">
+            <form action="/admin/about/{{ $about->id }}" method="POST" enctype="multipart/form-data">
                 @method('PUT')
                 @csrf 
                 <div class="form-group">
-                    <label for="">CV Critical Performance</label>
-                    <input type="text" class="form-control" name="name" placeholder="Judul" value="{{$about->name}}">
+                    <label for="">Judul</label>
+                    <input type="text" class="form-control" name="judul" placeholder="Judul" value="{{$about->judul}}">
                 </div>
-                @error('name')
+                @error('judul')
                 <small style="color:red">{{$message}}</small>
                 @enderror
                 <div class="form-group">
-                    <label for="">Deskripsi</label>
-                    <textarea name="description" id="" cols="30" rows="10" class="form-control" placeholder="Deskripsi">{{$about->description}}
+                    <label for="">Subjudul</label>
+                    <textarea name="subjudul" id="" cols="30" rows="10" class="form-control" placeholder="Subjudul">{{$about->subjudul}}
                     </textarea>
                 </div>
-                @error('description')
+                @error('subjudul')
                 <small style="color:red">{{$message}}</small>
                 @enderror
                 <div class="form-group">
-                    <label for="">Alamat</label>
-                    <input type="text" class="form-control" name="alamat" placeholder="Alamat" value="{{$about->alamat}}">
+                    <label for="">Deskripsi 1</label>
+                    <textarea name="deskripsi_1" id="" cols="30" rows="10" class="form-control" placeholder="Deskripsi_1">{{$about->deskripsi_1}}
+                    </textarea>
                 </div>
-                @error('alamat').
-                <small style="color:red">{{ $message }}</small>
-                @enderror
-                <div class="form-group">
-                    <label for="">Email</label>
-                    <input type="text" class="form-control" name="email" placeholder="Email" value="{{$about->email}}">
-                </div>
-                @error('email')
+                @error('deskripsi_1')
                 <small style="color:red">{{$message}}</small>
                 @enderror
                 <div class="form-group">
-                    <label for="">Telepon</label>
-                    <input type="text" class="form-control" name="telepon" placeholder="Telepon" value="{{$about->telepon}}">
+                    <label for="">Deskripsi 2</label>
+                    <textarea name="deskripsi_2" id="" cols="30" rows="10" class="form-control" placeholder="Deskripsi_2">{{$about->deskripsi_2}}
+                    </textarea>
                 </div>
-                @error('telepon')
+                @error('deskripsi_2')
                 <small style="color:red">{{$message}}</small>
                 @enderror
                 <div class="form-group">
-                    <label for="">Maps Emded</label>
-                    <textarea name="maps_emded" id="" cols="30" rows="10" class="form-control" placeholder="Maps Emded">{{$about->maps_emded}}</textarea>
+                    <label for="">Kelebihan 1</label>
+                    <input type="text" class="form-control" name="kelebihan_1" placeholder="Kelebihan_1" value="{{$about->kelebihan_1}}">
                 </div>
-                @error('maps_emded')
+                @error('kelebihan_1')
                 <small style="color:red">{{$message}}</small>
                 @enderror
-                <img src="/image/{{$about->logo}}" alt="" class="img-fluid">
                 <div class="form-group">
-                    <label for="">Gambar</label>
-                    <input type="file" class="form-control" name="logo">
+                    <label for="">Kelebihan 2</label>
+                    <input type="text" class="form-control" name="kelebihan_2" placeholder="Kelebihan_2" value="{{$about->kelebihan_2}}">
                 </div>
-                @error('image')
+                @error('kelebihan_2')
+                <small style="color:red">{{$message}}</small>
+                @enderror
+                <div class="form-group">
+                    <label for="">Kelebihan 3</label>
+                    <input type="text" class="form-control" name="kelebihan_3" placeholder="Kelebihan_3" value="{{$about->kelebihan_3}}">
+                </div>
+                @error('kelebihan_3')
+                <small style="color:red">{{$message}}</small>
+                @enderror
+                <div class="form-group">
+                    <label for="">Kelebihan 4</label>
+                    <input type="text" class="form-control" name="kelebihan_4" placeholder="Kelebihan_4" value="{{$about->kelebihan_4}}">
+                </div>
+                @error('kelebihan_4')
                 <small style="color:red">{{$message}}</small>
                 @enderror
                 <div class="form-group">

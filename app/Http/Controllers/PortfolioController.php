@@ -45,7 +45,7 @@ class PortfolioController extends Controller
 
         portfolio::create($input);
 
-        return redirect('/portfolios')->with('message', 'Data Berhasil Ditambahkan');
+        return redirect('/admin/portfolios')->with('message', 'Data Berhasil Ditambahkan');
     }
 
     /**
@@ -88,7 +88,7 @@ class PortfolioController extends Controller
 
     $portfolio->update($input); //
 
-    return redirect('/portfolios')->with('message', 'Data Berhasil Diedit');
+    return redirect('/admin/portfolios')->with('message', 'Data Berhasil Diedit');
 }
 
 
@@ -99,6 +99,6 @@ class PortfolioController extends Controller
     {
         $portfolio->delete();
 
-        return redirect('/portfolios')->with('message', 'Data Berhasil Dihapus');
+        return redirect('/admin/portfolios')->with('message', 'Data Berhasil Dihapus');
     }
 }

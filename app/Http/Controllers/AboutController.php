@@ -55,29 +55,22 @@ class AboutController extends Controller
     {
         $about = About::find($id);
         $request->validate([
-        'name' => 'required',
-        'description' => 'required',
-        'alamat' => 'required',
-        'email' => 'required',
-        'telepon' => 'required',
-        'maps_emded' => 'required',
-        'logo' => 'image',
+        'judul' => 'required',
+        'subjudul' => 'required',
+        'deskripsi_1' => 'required',
+        'deskripsi_2' => 'required',
+        'kelebihan_1' => 'required',
+        'kelebihan_2' => 'required',
+        'kelebihan_3' => 'required',
+        'kelebihan_4' => 'required',
     ]);
 
     $input = $request->all();
 
-    if ($image = $request->file('logo')) {
-        $destinationPath = 'image/';
-        $imageName = $image->getClientOriginalName();
-        $image->move($destinationPath, $imageName);
-        $input['logo'] = $imageName;
-    } else {
-        unset($input['logo']);
-    }
 
     $about->update($input);
 
-    return redirect('/about')->with('message', 'Data Berhasil Diedit');
+    return redirect('/admin/about')->with('message', 'Data Berhasil Diedit');
     }
 
     /**

@@ -45,7 +45,7 @@ class ServiceController extends Controller
 
         Service::create($input);
 
-        return redirect('/services')->with('message', 'Data Berhasil Ditambahkan');
+        return redirect('/admin/services')->with('message', 'Data Berhasil Ditambahkan');
     }
 
     /**
@@ -88,7 +88,7 @@ class ServiceController extends Controller
 
     $service->update($input); //
 
-    return redirect('/services')->with('message', 'Data Berhasil Diedit');
+    return redirect('/admin/services')->with('message', 'Data Berhasil Diedit');
 }
 
 
@@ -99,6 +99,6 @@ class ServiceController extends Controller
     {
         $service->delete();
 
-        return redirect('/services')->with('message', 'Data Berhasil Dihapus');
+        return redirect('/admin/services')->with('message', 'Data Berhasil Dihapus');
     }
 }

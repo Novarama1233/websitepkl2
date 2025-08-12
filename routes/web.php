@@ -9,6 +9,7 @@ use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\TeamController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AboutController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,14 +25,20 @@ Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/login', [AuthController::class, 'authenticated']);
 Route::get('/logout', [AuthController::class, 'logout']);
 
-Route::get('/dashboard', [DashboarDcONTROLLER::class, 'index'])->middleware('auth');
+Route::prefix('/admin')->middleware('auth')->group(function(){
+Route::get('/dashboard', [DashboarDcONTROLLER::class, 'index']);
 
-Route::resource('sliders', SliderController::class)->middleware('auth');
-Route::resource('services', ServiceController::class)->middleware('auth');
-Route::resource('testimonials', TestimonialController::class)->middleware('auth');
-Route::resource('portfolios', PortfolioController::class)->middleware('auth');
-Route::resource('clients', ClientController::class)->middleware('auth');
-Route::resource('teams', TeamController::class)->middleware('auth');
+Route::resource('sliders', SliderController::class);
+Route::resource('services', ServiceController::class);
+Route::resource('testimonials', TestimonialController::class);
+Route::resource('portfolios', PortfolioController::class);
+Route::resource('clients', ClientController::class);
+Route::resource('teams', TeamController::class);
 
-Route::get('/about', [AboutController::class, 'index'])->middleware('auth');
-Route::put('/about/{id}', [AboutController::class, 'update'])->middleware('auth');
+Route::get('contact', [ContactController::class, 'index']);
+Route::put('contact/{id}', [ContactController::class, 'update']);
+
+Route::get('about', [AboutController::class, 'index']);
+Route::put('about/{id}', [AboutController::class, 'update']);
+
+});

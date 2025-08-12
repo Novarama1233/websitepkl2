@@ -99,6 +99,6 @@ class SliderController extends Controller
     {
         $slider->delete();
 
-        return redirect('/sliders')->with('message', 'Data Berhasil Dihapus');
+        return redirect('/admin/sliders')->with('message', 'Data Berhasil Dihapus');
     }
 }

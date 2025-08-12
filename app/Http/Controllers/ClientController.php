@@ -45,7 +45,7 @@ class ClientController extends Controller
 
         client::create($input);
 
-        return redirect('/clients')->with('message', 'Data Berhasil Ditambahkan');
+        return redirect('/admin/clients')->with('message', 'Data Berhasil Ditambahkan');
     }
 
     /**
@@ -88,7 +88,7 @@ class ClientController extends Controller
 
     $client->update($input); //
 
-    return redirect('/clients')->with('message', 'Data Berhasil Diedit');
+    return redirect('/admin/clients')->with('message', 'Data Berhasil Diedit');
 }
 
 
@@ -99,6 +99,6 @@ class ClientController extends Controller
     {
         $client->delete();
 
-        return redirect('/clients')->with('message', 'Data Berhasil Dihapus');
+        return redirect('/admin/clients')->with('message', 'Data Berhasil Dihapus');
     }
 }

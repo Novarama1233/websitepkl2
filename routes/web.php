@@ -26,6 +26,11 @@ Route::post('/login', [AuthController::class, 'authenticated']);
 Route::get('/logout', [AuthController::class, 'logout']);
 
 Route::prefix('/admin')->middleware('auth')->group(function(){
+    
+Route::get('/login', [AuthController::class, 'login'])->name('login');
+Route::post('/login', [AuthController::class, 'authenticated']);
+Route::get('/logout', [AuthController::class, 'logout']);
+
 Route::get('/dashboard', [DashboarDcONTROLLER::class, 'index']);
 
 Route::resource('sliders', SliderController::class);

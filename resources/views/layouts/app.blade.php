@@ -131,7 +131,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </a>
           </li>
           <li class="nav-item">
-            <a href="login" class="nav-link">
+            <a href="/admin/login" class="nav-link">
               <i class="nav-icon fas fa-sign"></i>
               <p>
                 Logout

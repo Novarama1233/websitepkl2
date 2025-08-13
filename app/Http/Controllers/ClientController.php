@@ -31,8 +31,11 @@ class ClientController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required','description' => 'required','image' =>  'required|image',
+    'title' => 'required',
+    'description' => 'required',
+    'image' => 'required|mimes:jpeg,png,jpg,svg,webp',
         ]);
+
 
         $input = $request->all();
 

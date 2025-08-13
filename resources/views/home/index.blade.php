@@ -57,7 +57,7 @@
             <a class="nav-link fw-bolder" href="contact">Contact</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link fw-bolder" href="dashboard">Kembali</a>
+            <a class="nav-link fw-bolder" href="/admin/dashboard">Kembali</a>
           </li>
         </ul>
       </div>
@@ -76,41 +76,18 @@
         aria-label="Slide 3"></button>
     </div>
     <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="assets/img/c1.jpg" class="d-block w-100 carousel-img" alt="..." />
+      @foreach ($sliders as $index => $slider)
+
+      <div class="carousel-item {{$index === 0 ? 'active' : '' }}">
+        <img src="assets/img/{{$slider->image}}" class="d-block w-100 carousel-img" alt="..." />
         <div class="carousel-caption d-none d-md-block">
-          <h5>First slide label</h5>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
-            ipsum provident excepturi minima molestias repudiandae, assumenda
-            delectus tempora consectetur explicabo quod! Quaerat veritatis
-            inventore ullam veniam officiis consectetur illo dicta!
+          <h5>{{$slider->title}}</h5>
+          <p>{{$slider->description}}
           </p>
         </div>
       </div>
-      <div class="carousel-item">
-        <img src="assets/img/c2.jpg" class="d-block w-100 carousel-img" alt="..." />
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Second slide label</h5>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
-            ipsum provident excepturi minima molestias repudiandae, assumenda
-            delectus tempora consectetur explicabo quod! Quaerat veritatis
-            inventore ullam veniam officiis consectetur illo dicta!
-          </p>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img src="assets/img/c3.jpg" class="d-block w-100 carousel-img" alt="..." />
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Third slide label</h5>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
-            ipsum provident excepturi minima molestias repudiandae, assumenda
-            delectus tempora consectetur explicabo quod! Quaerat veritatis
-            inventore ullam veniam officiis consectetur illo dicta!
-          </p>
-        </div>
-      </div>
+      @endforeach
+      
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -132,46 +109,36 @@
       <div class="row mt-5">
         <div class="col-md-6" data-aos="fade-right">
           <h3 class="fw-bold about-us-title">
-            Lorem ipsum dolor sit amet consectetur.
+            {{$about->judul}}
           </h3>
           <p class="fw-bolder mt-4 about-us-subtitle">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Quibusdam nobis illo eligendi sint commodi.
+            {{$about->subjudul}}
           </p>
         </div>
         <div class="col-md-6" data-aos="fade-left">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Deserunt, minima non. Aliquid itaque quas libero totam consequatur
-            corporis quibusdam repellendus earum id atque cum veniam, delectus
-            eum odio? Animi, voluptatum!
+            {{$about->deskripsi_1}}
           </p>
           <ul class="list-group list-group-flush">
             <li class="list-group-item">
               <i class="fa fa-check-double primary"></i>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis,
-              laboriosam?
+              {{$about->kelebihan_1}}
             </li>
             <li class="list-group-item">
               <i class="fa fa-check-double primary"></i>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis,
-              laboriosam?
+              {{$about->kelebihan_2}}
             </li>
             <li class="list-group-item">
               <i class="fa fa-check-double primary"></i>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis,
-              laboriosam?
+              {{$about->kelebihan_3}}
             </li>
             <li class="list-group-item">
               <i class="fa fa-check-double primary"></i>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis,
-              laboriosam?
+              {{$about->kelebihan_4}}
             </li>
           </ul>
           <p class="mt-2">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
-            quisquam facilis impedit. Commodi nesciunt culpa soluta esse
-            temporibus officia veritatis incidunt error porro
+            {{$about->deskripsi_2}}
           </p>
         </div>
       </div>
@@ -190,90 +157,21 @@
         aliquam.
       </p>
       <div class="row mt-5">
+        @foreach ($services as $service)
         <div class="col-md-4">
           <div class="card border-0 text-center p-4 mt-3" data-aos="zoom-in">
             <div class="card-body">
               <div class="card-icon">
-                <i class="fa fa-book fa-lg fa-3x"></i>
+                <img src="/image/{{$service->image}}" alt="" class="img-fluid" width="80">
               </div>
-              <div class="card-title fw-bolder mt-4">Lorem Ipsum</div>
+              <div class="card-title fw-bolder mt-4">{{$service->title}}</div>
               <p class="card-description mt-3">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
-                nam vero, dolorem iusto eum voluptatibus?
+                {{$service->description}}
               </p>
             </div>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="card border-0 text-center p-4 mt-3" data-aos="zoom-in">
-            <div class="card-body">
-              <div class="card-icon">
-                <i class="fa fa-book fa-lg fa-3x"></i>
-              </div>
-              <div class="card-title fw-bolder mt-4">Lorem Ipsum</div>
-              <p class="card-description mt-3">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
-                nam vero, dolorem iusto eum voluptatibus?
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card border-0 text-center p-4 mt-3" data-aos="zoom-in">
-            <div class="card-body">
-              <div class="card-icon">
-                <i class="fa fa-book fa-lg fa-3x"></i>
-              </div>
-              <div class="card-title fw-bolder mt-4">Lorem Ipsum</div>
-              <p class="card-description mt-3">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
-                nam vero, dolorem iusto eum voluptatibus?
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card border-0 text-center p-4 mt-3" data-aos="zoom-in">
-            <div class="card-body">
-              <div class="card-icon">
-                <i class="fa fa-book fa-lg fa-3x"></i>
-              </div>
-              <div class="card-title fw-bolder mt-4">Lorem Ipsum</div>
-              <p class="card-description mt-3">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
-                nam vero, dolorem iusto eum voluptatibus?
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card border-0 text-center p-4 mt-3" data-aos="zoom-in">
-            <div class="card-body">
-              <div class="card-icon">
-                <i class="fa fa-book fa-lg fa-3x"></i>
-              </div>
-              <div class="card-title fw-bolder mt-4">Lorem Ipsum</div>
-              <p class="card-description mt-3">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
-                nam vero, dolorem iusto eum voluptatibus?
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card border-0 text-center p-4 mt-3" data-aos="zoom-in">
-            <div class="card-body">
-              <div class="card-icon">
-                <i class="fa fa-book fa-lg fa-3x"></i>
-              </div>
-              <div class="card-title fw-bolder mt-4">Lorem Ipsum</div>
-              <p class="card-description mt-3">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
-                nam vero, dolorem iusto eum voluptatibus?
-              </p>
-            </div>
-          </div>
-        </div>
+        @endforeach
       </div>
     </div>
   </div>
@@ -299,42 +197,12 @@
         <div class="col-md-12">
           <div class="mansory portfolio-container">
             <div class="mansory-sizer"></div>
-            <div class="mansory-item m-2 portfolio-item filter-web">
-              <img src="assets/img/p1.jpg" alt="" class="img-fluid" />
+            @foreach($portfolios as $portfolio)
+
+                  <div class="mansory-item m-2 portfolio-item filter-web">
+                      <img src="/image/{{$portfolio->image}}" alt="" class="img-fluid" />
             </div>
-            <div class="mansory-item m-2 portfolio-item filter-design">
-              <img src="assets/img/p2.jpg" alt="" class="img-fluid" />
-            </div>
-            <div class="mansory-item m-2 portfolio-item filter-design">
-              <img src="assets/img/p3.jpg" alt="" class="img-fluid" />
-            </div>
-            <div class="mansory-item m-2 portfolio-item filter-web">
-              <img src="assets/img/p4.jpg" alt="" class="img-fluid" />
-            </div>
-            <div class="mansory-item m-2 portfolio-item filter-design">
-              <img src="assets/img/p5.jpg" alt="" class="img-fluid" />
-            </div>
-            <div class="mansory-item m-2 portfolio-item filter-photo">
-              <img src="assets/img/p6.jpg" alt="" class="img-fluid" />
-            </div>
-            <div class="mansory-item m-2 portfolio-item filter-web">
-              <img src="assets/img/p7.jpg" alt="" class="img-fluid" />
-            </div>
-            <div class="mansory-item m-2 portfolio-item filter-web">
-              <img src="assets/img/p8.jpg" alt="" class="img-fluid" />
-            </div>
-            <div class="mansory-item m-2 portfolio-item filter-photo">
-              <img src="assets/img/p9.jpg" alt="" class="img-fluid" />
-            </div>
-            <div class="mansory-item m-2 portfolio-item filter-web">
-              <img src="assets/img/p10.jpg" alt="" class="img-fluid" />
-            </div>
-            <div class="mansory-item m-2 portfolio-item filter-design">
-              <img src="assets/img/p11.jpg" alt="" class="img-fluid" />
-            </div>
-            <div class="mansory-item m-2 portfolio-item filter-design">
-              <img src="assets/img/p12.jpg" alt="" class="img-fluid" />
-            </div>
+            @endforeach
           </div>
         </div>
       </div>
@@ -348,31 +216,12 @@
       <div class="title-container">
         <h2 class="text-center fw-bold">CLIENTS</h2>
       </div>
-      <div class="row mt-5">
-        <div class="col-md-3 pt-5 text-center" data-aos="zoom-in">
-          <img src="assets/img/b1.svg" class="img-fluid brand-image" alt="" />
+          <div class="row mt-5">
+            @foreach($clients as $client)
+            <div class="col-md-3 pt-5 text-center" data-aos="zoom-in">
+              <img src="/image/{{$client->image}}" class="img-fluid brand-image" alt="" />
         </div>
-        <div class="col-md-3 pt-5 text-center" data-aos="zoom-in">
-          <img src="assets/img/b2.svg" class="img-fluid brand-image" alt="" />
-        </div>
-        <div class="col-md-3 pt-5 text-center" data-aos="zoom-in">
-          <img src="assets/img/b3.svg" class="img-fluid brand-image" alt="" />
-        </div>
-        <div class="col-md-3 pt-5 text-center" data-aos="zoom-in">
-          <img src="assets/img/b4.svg" class="img-fluid brand-image" alt="" />
-        </div>
-        <div class="col-md-3 pt-5 text-center" data-aos="zoom-in">
-          <img src="assets/img/b5.svg" class="img-fluid brand-image" alt="" />
-        </div>
-        <div class="col-md-3 pt-5 text-center" data-aos="zoom-in">
-          <img src="assets/img/b6.svg" class="img-fluid brand-image" alt="" />
-        </div>
-        <div class="col-md-3 pt-5 text-center" data-aos="zoom-in">
-          <img src="assets/img/b7.svg" class="img-fluid brand-image" alt="" />
-        </div>
-        <div class="col-md-3 pt-5 text-center" data-aos="zoom-in">
-          <img src="assets/img/b8.svg" class="img-fluid brand-image" alt="" />
-        </div>
+        @endforeach
       </div>
     </div>
   </div>
@@ -385,49 +234,25 @@
         <div class="row">
           <div class="col-md-1"></div>
           <div class="col-md-3">
-            <h4 class="fw-bold">COMPANY</h2>
+            <h4 class="fw-bold">{{$contact->name}}</h2>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Repeliat
-                consequuntur magnam commodi voluptatem quas? Itaque quo obcaecati
-                perspiciatis quaerat ullam!
+                {{$contact->description}}
               </p>
-              <strong>Phone</strong> : <span>+628382223170 </span>
+              <strong>Phone</strong> : <span>{{$contact->telepon}} </span>
               <br />
-              <strong>Email</strong> : <span>info@company.org </span>
+              <strong>Email</strong> : <span>{{$contact->email}} </span>
           </div>
           <div class="col-md-2">
             <h4 class="fw-bold">Our Services</h2>
               <ul class="list-group list-unstyled">
+                @foreach($services as $service)
                 <li class="list-item">
                   <a href="" class="text-decoration-none text-white">
                     <i class="fa fa-chevron-right primary"></i>
-                    Web Development
+                    {{$service->title}}
                   </a>
                 </li>
-                <li class="list-item">
-                  <a href="" class="text-decoration-none text-white">
-                    <i class="fa fa-chevron-right primary"></i>
-                    Web Design
-                  </a>
-                </li>
-                <li class="list-item">
-                  <a href="" class="text-decoration-none text-white">
-                    <i class="fa fa-chevron-right primary"></i>
-                    Online Marketting
-                  </a>
-                </li>
-                <li class="list-item">
-                  <a href="" class="text-decoration-none text-white">
-                    <i class="fa fa-chevron-right primary"></i>
-                    Graphic Design
-                  </a>
-                </li>
-                <li class="list-item">
-                  <a href="" class="text-decoration-none text-white">
-                    <i class="fa fa-chevron-right primary"></i>
-                    Photography
-                  </a>
-                </li>
+                @endforeach
               </ul>
           </div>
           <div class="col-md-2">

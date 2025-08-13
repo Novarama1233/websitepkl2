@@ -55,7 +55,7 @@
             <a class="nav-link fw-bolder" href="contact">Contact</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link fw-bolder" href="dashboard">Kembali</a>
+            <a class="nav-link fw-bolder" href="/admin/dashboard">Kembali</a>
           </li>
         </ul>
       </div>
@@ -80,7 +80,7 @@
     <!-- contact -->
     <div class="contact mb-5">
         <div class="maps">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15868.42709522611!2d106.51505766873143!3d-6.116326399999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e41ff56c3f042f3%3A0xa8ccbac2d1d1e815!2sREMAP%20ECU%20HONDA%20(%20CRITICAL%20PERFORMANCE)!5e0!3m2!1sid!2sid!4v1754468715852!5m2!1sid!2sid" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="{{$contact->maps_emded}}" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         <div class="container mt-5">
             <div class="row">
@@ -93,17 +93,17 @@
                                     <div class="col-md-4">
                                         <i class="fa fa-map-marker-alt fa-2x primary float-start me-4"></i>
                                         <h4 class="fw-bolder">Location</h4>
-                                        <p class="ms-5">Griya Artha rajeg blok j5/4, Kabupaten Tangerang, Banten 15540</p>
+                                        <p class="ms-5">{{$contact->alamat}}</p>
                                     </div>
                                     <div class="col-md-4">
                                         <i class="fa fa-envelope fa-2x primary float-start me-3"></i>
                                         <h4 class="fw-bolder">Email</h4>
-                                        <p class="ms-5">info@company.org</p>
+                                        <p class="ms-5">{{$contact->email}}</p>
                                     </div>
                                     <div class="col-md-4">
                                         <i class="fa fa-phone-alt fa-2x primary float-start me-3"></i>
                                         <h4 class="fw-bolder">Phone</h4>
-                                        <p class="ms-5">+62 22 456 7771</p>
+                                        <p class="ms-5">{{$contact->telepon}}</p>
                                     </div>
                                 </div>
                             </div>

@@ -55,7 +55,7 @@
             <a class="nav-link fw-bolder" href="contact">Contact</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link fw-bolder" href="dashboard">Kembali</a>
+            <a class="nav-link fw-bolder" href="/admin/dashboard">Kembali</a>
           </li>
         </ul>
       </div>
@@ -77,7 +77,7 @@
   </div>
   <!-- end breadcumbs -->
 
-  <!-- teams -->
+  <!-- testimonial -->
   <div class="teams bg-light py-5">
     <div class="container">
       <div class="title-container">
@@ -87,125 +87,53 @@
         molestias eum illo, ducimus eius quisquam repellendus accusamus rerum! Repeliendus enim incidunt assumenda
         pariatur, quisquam evaniet numquam.</p>
       <div class="row mt-5">
+        @foreach($testimonials as $testimonial)
         <div class="col-md-6 mt-4" data-aos="fade-right">
           <div class="card border-0 shadow shadow-sm">
             <div class="card-body testimonial-item p-5">
-              <img src="assets/img/a1.jpg" alt="" class="img-testimonial float-start rounded-circle me-3">
-              <strong class="d-block">Paul mandy</strong>
+              <img src="/image/{{$testimonial->image}}" alt="" class="img-testimonial float-start rounded-circle me-3">
+              <strong class="d-block">{{$testimonial->title}}</strong>
               <small class="text-muted">CEO & Founder</small>
               <p class="fst-italic mt-3 fs-5">
                 <i class="fa fa-quote-left"></i>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod repellendus ipsam accusantium at
-                blanditiis sint, minus est molestiae voluptas eveniet id nam perspiciatis porro hic expedita debitis
-                maxime beatae. At!
+                {{$testimonial->description}}
                 <i class="fa fa-quote-right"></i>
               </p>
             </div>
           </div>
         </div>
-        <div class="col-md-6 mt-4" data-aos="fade-left">
-          <div class="card border-0 shadow shadow-sm">
-            <div class="card-body testimonial-item p-5">
-              <img src="assets/img/a2.jpg" alt="" class="img-testimonial float-start rounded-circle me-3">
-              <strong class="d-block">Paul mandy</strong>
-              <small class="text-muted">CEO & Founder</small>
-              <p class="fst-italic mt-3 fs-5">
-                <i class="fa fa-quote-left"></i>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod repellendus ipsam accusantium at
-                blanditiis sint, minus est molestiae voluptas eveniet id nam perspiciatis porro hic expedita debitis
-                maxime beatae. At!
-                <i class="fa fa-quote-right"></i>
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 mt-4" data-aos="fade-right">
-          <div class="card border-0 shadow shadow-sm">
-            <div class="card-body testimonial-item p-5">
-              <img src="assets/img/a3.jpg" alt="" class="img-testimonial float-start rounded-circle me-3">
-              <strong class="d-block">Paul mandy</strong>
-              <small class="text-muted">CEO & Founder</small>
-              <p class="fst-italic mt-3 fs-5">
-                <i class="fa fa-quote-left"></i>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod repellendus ipsam accusantium at
-                blanditiis sint, minus est molestiae voluptas eveniet id nam perspiciatis porro hic expedita debitis
-                maxime beatae. At!
-                <i class="fa fa-quote-right"></i>
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 mt-4" data-aos="fade-left">
-          <div class="card border-0 shadow shadow-sm">
-            <div class="card-body testimonial-item p-5">
-              <img src="assets/img/a4.jpg" alt="" class="img-testimonial float-start rounded-circle me-3">
-              <strong class="d-block">Paul mandy</strong>
-              <small class="text-muted">CEO & Founder</small>
-              <p class="fst-italic mt-3 fs-5">
-                <i class="fa fa-quote-left"></i>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod repellendus ipsam accusantium at
-                blanditiis sint, minus est molestiae voluptas eveniet id nam perspiciatis porro hic expedita debitis
-                maxime beatae. At!
-                <i class="fa fa-quote-right"></i>
-              </p>
-            </div>
-          </div>
-        </div>
+        @endforeach
       </div>
     </div>
   </div>
-  <!-- end teams -->
+  <!-- end testimonial -->
 
   <!-- footer -->
-  <footer>
-    <div class="footer-top bg-dark text-white p-5">
+  <footer class="mt-5">
+    <div class="footer-top bg-dark text-white p-5 ">
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-1"></div>
           <div class="col-md-3">
-            <h4 class="fw-bold">COMPANY</h2>
+            <h4 class="fw-bold">{{$contact->name}}</h2>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Repeliat
-                consequuntur magnam commodi voluptatem quas? Itaque quo obcaecati
-                perspiciatis quaerat ullam!
+                {{$contact->description}}
               </p>
-              <strong>Phone</strong> : <span>+628382223170 </span>
+              <strong>Phone</strong> : <span>{{$contact->telepon}} </span>
               <br />
-              <strong>Email</strong> : <span>info@company.org </span>
+              <strong>Email</strong> : <span>{{$contact->email}} </span>
           </div>
           <div class="col-md-2">
             <h4 class="fw-bold">Our Services</h2>
               <ul class="list-group list-unstyled">
+                @foreach($services as $service)
                 <li class="list-item">
                   <a href="" class="text-decoration-none text-white">
                     <i class="fa fa-chevron-right primary"></i>
-                    Web Development
+                    {{$service->title}}
                   </a>
                 </li>
-                <li class="list-item">
-                  <a href="" class="text-decoration-none text-white">
-                    <i class="fa fa-chevron-right primary"></i>
-                    Web Design
-                  </a>
-                </li>
-                <li class="list-item">
-                  <a href="" class="text-decoration-none text-white">
-                    <i class="fa fa-chevron-right primary"></i>
-                    Online Marketting
-                  </a>
-                </li>
-                <li class="list-item">
-                  <a href="" class="text-decoration-none text-white">
-                    <i class="fa fa-chevron-right primary"></i>
-                    Graphic Design
-                  </a>
-                </li>
-                <li class="list-item">
-                  <a href="" class="text-decoration-none text-white">
-                    <i class="fa fa-chevron-right primary"></i>
-                    Photography
-                  </a>
-                </li>
+                @endforeach
               </ul>
           </div>
           <div class="col-md-2">
@@ -245,7 +173,9 @@
           </div>
           <div class="col-md-3">
             <h4 class="fw-bold">Join Our Newsletter</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </p>
               <div class="input-group">
                 <input type="text" class="form-control" placeholder="yourmail@example.com" />
                 <button class="btn btn-subscribe" type="button" id="inputGroupFileAddon04">
@@ -256,7 +186,6 @@
         </div>
       </div>
     </div>
-
     <div class="footer-down bg-darker text-white px-5 py-3">
       <div class="container-fluid">
         <div class="row">

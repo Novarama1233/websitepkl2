@@ -18,7 +18,7 @@
                 @method('PUT')
                 @csrf 
                 <div class="form-group">
-                    <label for="">CV Critical Performance</label>
+                    <label for="">Nama Perusahaan</label>
                     <input type="text" class="form-control" name="name" placeholder="Judul" value="{{$contact->name}}">
                 </div>
                 @error('name')

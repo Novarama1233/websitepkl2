@@ -55,7 +55,7 @@
             <a class="nav-link fw-bolder" href="contact">Contact</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link fw-bolder" href="dashboard">Kembali</a>
+            <a class="nav-link fw-bolder" href="/admin/dashboard">Kembali</a>
           </li>
         </ul>
       </div>
@@ -80,51 +80,41 @@
   <!-- about -->
   <div class="container">
     <div class="row mt-5">
-      <div class="col-md-6" data-aos="fade-right">
-        <h3 class="fw-bold about-us-title">
-          Lorem ipsum dolor sit amet consectetur.
-        </h3>
-        <p class="fw-bolder mt-4 about-us-subtitle">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-          Quibusdam nobis illo eligendi sint commodi.
-        </p>
+        <div class="col-md-6" data-aos="fade-right">
+          <h3 class="fw-bold about-us-title">
+            {{$about->judul}}
+          </h3>
+          <p class="fw-bolder mt-4 about-us-subtitle">
+            {{$about->subjudul}}
+          </p>
+        </div>
+        <div class="col-md-6" data-aos="fade-left">
+          <p>
+            {{$about->deskripsi_1}}
+          </p>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <i class="fa fa-check-double primary"></i>
+              {{$about->kelebihan_1}}
+            </li>
+            <li class="list-group-item">
+              <i class="fa fa-check-double primary"></i>
+              {{$about->kelebihan_2}}
+            </li>
+            <li class="list-group-item">
+              <i class="fa fa-check-double primary"></i>
+              {{$about->kelebihan_3}}
+            </li>
+            <li class="list-group-item">
+              <i class="fa fa-check-double primary"></i>
+              {{$about->kelebihan_4}}
+            </li>
+          </ul>
+          <p class="mt-2">
+            {{$about->deskripsi_2}}
+          </p>
+        </div>
       </div>
-      <div class="col-md-6" data-aos="fade-left">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          Deserunt, minima non. Aliquid itaque quas libero totam consequatur
-          corporis quibusdam repellendus earum id atque cum veniam, delectus
-          eum odio? Animi, voluptatum!
-        </p>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">
-            <i class="fa fa-check-double primary"></i>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis,
-            laboriosam?
-          </li>
-          <li class="list-group-item">
-            <i class="fa fa-check-double primary"></i>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis,
-            laboriosam?
-          </li>
-          <li class="list-group-item">
-            <i class="fa fa-check-double primary"></i>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis,
-            laboriosam?
-          </li>
-          <li class="list-group-item">
-            <i class="fa fa-check-double primary"></i>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis,
-            laboriosam?
-          </li>
-        </ul>
-        <p class="mt-2">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
-          quisquam facilis impedit. Commodi nesciunt culpa soluta esse
-          temporibus officia veritatis incidunt error porro
-        </p>
-      </div>
-    </div>
   </div>
   <!-- end about -->
 
@@ -132,48 +122,23 @@
   <div class="teams bg-light mt-5 py-5">
     <div class="container">
       <div class="title-container ">
-        <h2 class="text-center fw-bold ">OUR TEAM</h2>
+        <h2 class="text-center fw-bold ">Our Team</h2>
       </div>
-      <p class="text-center ">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem modi vero voluptas ea
-        molestias eum illo, ducimus eius quisquam repellendus accusamus rerum! Repeliendus enim incidunt assumenda
-        pariatur, quisquam evaniet numquam.</p>
+      <p class="text-center ">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem modi vero voluptas ea molestias eum illo, ducimus eius quisquam repellendus accusamus rerum! Repeliendus enim incidunt assumenda pariatur, quisquam evaniet numquam.</p>
       <div class="row">
+
+        @foreach($teams as $team)
+
         <div class="col-md-3" data-aos="fade-up">
           <div class="card" style="width: 18rem;">
-            <img src="assets/img/t1.jpg" class="card-img-top" alt="...">
+            <img src="/image/{{$team->image}}" class="card-img-top" alt="...">
             <div class="card-body text-center">
-              <h5 class="card-title text-bold">Jhon Doe</h5>
-              <p class="card-text text-muted">Chief Executive Officer</p>
+              <h5 class="card-title text-bold">{{$team->title}}</h5>
+              <p class="card-text text-muted">{{$team->description}}</p>
             </div>
           </div>
         </div>
-        <div class="col-md-3" data-aos="fade-up">
-          <div class="card" style="width: 18rem;">
-            <img src="assets/img/t2.jpg" class="card-img-top" alt="...">
-            <div class="card-body text-center">
-              <h5 class="card-title text-bold">Jhon Doe</h5>
-              <p class="card-text text-muted">Chief Executive Officer</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3" data-aos="fade-up">
-          <div class="card" style="width: 18rem;">
-            <img src="assets/img/t3.jpg" class="card-img-top" alt="...">
-            <div class="card-body text-center">
-              <h5 class="card-title text-bold">Jhon Doe</h5>
-              <p class="card-text text-muted">Chief Executive Officer</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3" data-aos="fade-up">
-          <div class="card" style="width: 18rem;">
-            <img src="assets/img/t4.jpg" class="card-img-top" alt="...">
-            <div class="card-body text-center">
-              <h5 class="card-title text-bold">Jhon Doe</h5>
-              <p class="card-text text-muted">Chief Executive Officer</p>
-            </div>
-          </div>
-        </div>
+        @endforeach
       </div>
     </div>
   </div>
@@ -186,30 +151,11 @@
         <h2 class="text-center fw-bold">CLIENTS</h2>
       </div>
       <div class="row mt-5">
+        @foreach($clients as $client)
         <div class="col-md-3 pt-5 text-center" data-aos="zoom-in">
-          <img src="assets/img/b1.svg" class="img-fluid brand-image" alt="" />
+          <img src="/image/{{$client->image}}" class="img-fluid brand-image" alt="" />
         </div>
-        <div class="col-md-3 pt-5 text-center" data-aos="zoom-in">
-          <img src="assets/img/b2.svg" class="img-fluid brand-image" alt="" />
-        </div>
-        <div class="col-md-3 pt-5 text-center" data-aos="zoom-in">
-          <img src="assets/img/b3.svg" class="img-fluid brand-image" alt="" />
-        </div>
-        <div class="col-md-3 pt-5 text-center" data-aos="zoom-in">
-          <img src="assets/img/b4.svg" class="img-fluid brand-image" alt="" />
-        </div>
-        <div class="col-md-3 pt-5 text-center" data-aos="zoom-in">
-          <img src="assets/img/b5.svg" class="img-fluid brand-image" alt="" />
-        </div>
-        <div class="col-md-3 pt-5 text-center" data-aos="zoom-in">
-          <img src="assets/img/b6.svg" class="img-fluid brand-image" alt="" />
-        </div>
-        <div class="col-md-3 pt-5 text-center" data-aos="zoom-in">
-          <img src="assets/img/b7.svg" class="img-fluid brand-image" alt="" />
-        </div>
-        <div class="col-md-3 pt-5 text-center" data-aos="zoom-in">
-          <img src="assets/img/b8.svg" class="img-fluid brand-image" alt="" />
-        </div>
+        @endforeach
       </div>
     </div>
   </div>
@@ -217,54 +163,30 @@
 
   <!-- footer -->
   <footer class="mt-5">
-    <div class="footer-top bg-dark text-white p-5">
+    <div class="footer-top bg-dark text-white p-5 ">
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-1"></div>
           <div class="col-md-3">
-            <h4 class="fw-bold">COMPANY</h2>
+            <h4 class="fw-bold">{{$contact->name}}</h2>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Repeliat
-                consequuntur magnam commodi voluptatem quas? Itaque quo obcaecati
-                perspiciatis quaerat ullam!
+                {{$contact->description}}
               </p>
-              <strong>Phone</strong> : <span>+628382223170 </span>
+              <strong>Phone</strong> : <span>{{$contact->telepon}} </span>
               <br />
-              <strong>Email</strong> : <span>info@company.org </span>
+              <strong>Email</strong> : <span>{{$contact->email}} </span>
           </div>
           <div class="col-md-2">
             <h4 class="fw-bold">Our Services</h2>
               <ul class="list-group list-unstyled">
+                @foreach($services as $service)
                 <li class="list-item">
                   <a href="" class="text-decoration-none text-white">
                     <i class="fa fa-chevron-right primary"></i>
-                    Web Development
+                    {{$service->title}}
                   </a>
                 </li>
-                <li class="list-item">
-                  <a href="" class="text-decoration-none text-white">
-                    <i class="fa fa-chevron-right primary"></i>
-                    Web Design
-                  </a>
-                </li>
-                <li class="list-item">
-                  <a href="" class="text-decoration-none text-white">
-                    <i class="fa fa-chevron-right primary"></i>
-                    Online Marketting
-                  </a>
-                </li>
-                <li class="list-item">
-                  <a href="" class="text-decoration-none text-white">
-                    <i class="fa fa-chevron-right primary"></i>
-                    Graphic Design
-                  </a>
-                </li>
-                <li class="list-item">
-                  <a href="" class="text-decoration-none text-white">
-                    <i class="fa fa-chevron-right primary"></i>
-                    Photography
-                  </a>
-                </li>
+                @endforeach
               </ul>
           </div>
           <div class="col-md-2">
@@ -304,7 +226,9 @@
           </div>
           <div class="col-md-3">
             <h4 class="fw-bold">Join Our Newsletter</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </p>
               <div class="input-group">
                 <input type="text" class="form-control" placeholder="yourmail@example.com" />
                 <button class="btn btn-subscribe" type="button" id="inputGroupFileAddon04">
@@ -315,7 +239,6 @@
         </div>
       </div>
     </div>
-
     <div class="footer-down bg-darker text-white px-5 py-3">
       <div class="container-fluid">
         <div class="row">

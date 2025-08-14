@@ -74,8 +74,9 @@ class HomeController extends Controller
     public function services()
     {
         $services = Service::all();
+        $contact = Contact::first();
 
-        return view('home.services', compact('services'));
+        return view('home.services', compact('services', 'contact'));
     }
 
     public function team()

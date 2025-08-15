@@ -21,18 +21,22 @@ Route::get('/services', [HomeController::class, 'services']);
 Route::get('/team', [HomeController::class, 'team']);
 Route::get('/testimoni', [HomeController::class, 'testimoni']);
 
+// untuk user
+Route::get('/user/login', [AuthController::class, 'login'])->name('login');
+Route::post('/user/login', [AuthController::class, 'authenticated']);
+
 Route::prefix('/user')->middleware('auth')->group(function(){
-Route::get('/login', [AuthController::class, 'login'])->name('login');
-Route::post('/login', [AuthController::class, 'authenticated']);
-Route::get('/logout', [AuthController::class, 'logout'])->middleware('auth');
+
+Route::get('/logout', [AuthController::class, 'logout']);
 });
 
-Route::prefix('/admin')->middleware('auth')->group(function(){
-    
-Route::get('/login', [AuthController::class, 'login'])->name('login');
-Route::post('/login', [AuthController::class, 'authenticated']);
-Route::get('/logout', [AuthController::class, 'logout'])->middleware('auth');
+// untuk admin
+Route::get('/admin/login', [AuthController::class, 'login'])->name('login');
+Route::post('/admin/login', [AuthController::class, 'authenticated']);
 
+Route::prefix('/admin')->middleware('auth')->group(function(){
+Route::get('/logout', [AuthController::class, 'logout']);
+    
 Route::get('/dashboard', [DashboardController::class, 'index']);
 
 Route::resource('sliders', SliderController::class);

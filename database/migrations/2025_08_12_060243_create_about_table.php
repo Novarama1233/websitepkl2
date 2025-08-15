@@ -13,14 +13,14 @@ return new class extends Migration
     {
         Schema::create('about', function (Blueprint $table) {
             $table->id();
-            $table->string('judul');
-            $table->string('subjudul');
-            $table->string('deskripsi_1');
-            $table->string('deskripsi_2');
-            $table->string('kelebihan_1');
-            $table->string('kelebihan_2');
-            $table->string('kelebihan_3');
-            $table->string('kelebihan_4');
+            $table->text('judul');
+            $table->text('subjudul');
+            $table->text('deskripsi_1');
+            $table->text('deskripsi_2');
+            $table->text('kelebihan_1');
+            $table->text('kelebihan_2');
+            $table->text('kelebihan_3');
+            $table->text('kelebihan_4');
             $table->timestamps();
         });
     }

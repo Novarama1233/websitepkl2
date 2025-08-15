@@ -74,12 +74,14 @@
         aria-label="Slide 2"></button>
       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
         aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+        aria-label="Slide 4"></button>
     </div>
     <div class="carousel-inner">
       @foreach ($sliders as $index => $slider)
 
       <div class="carousel-item {{$index === 0 ? 'active' : '' }}">
-        <img src="assets/img/{{$slider->image}}" class="d-block w-100 carousel-img" alt="..." />
+        <img src="/image/{{$slider->image}}" class="d-block w-100 carousel-img" alt="..." />
         <div class="carousel-caption d-none d-md-block">
           <h5>{{$slider->title}}</h5>
           <p>{{$slider->description}}

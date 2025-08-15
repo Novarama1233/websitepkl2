@@ -72,7 +72,7 @@ class ServiceController extends Controller
     $request->validate([
         'title' => 'required',
         'description' => 'required',
-        'image' => 'image',
+        'image' => 'required|mimes:jpeg,png,jpg,svg,webp',
     ]);
 
     $input = $request->all();

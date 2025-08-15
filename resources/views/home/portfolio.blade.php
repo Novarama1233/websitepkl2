@@ -55,7 +55,7 @@
             <a class="nav-link fw-bolder" href="contact">Contact</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link fw-bolder" href="/admin/dashboard">Kembali</a>
+            <a class="nav-link fw-bolder" href="/admin/login">Ke Dashboard</a>
           </li>
         </ul>
       </div>

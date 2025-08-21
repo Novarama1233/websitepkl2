@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Admin Bengkel</title>
+  <title>Login User</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -19,10 +19,10 @@
   <!-- /.login-logo -->
   <div class="card card-outline card-primary">
     <div class="card-header text-center">
-      <a href="#" class="h1"><b>Admin</b>Bengkel</a>
+      <a href="#" class="h1"><b>Silahkan</b>Login</a>
     </div>
     <div class="card-body">
-      <p class="login-box-msg">Log in disini</p>
+      <p class="login-box-msg">Login disini</p>
 
       @error('loginError')
       <div class="alert alert-danger">
@@ -54,10 +54,10 @@
             </div>
           </div>
         </div>
-
-        @error('password')
+         @error('password')
       <small style="color:red">{{ $message }}</small>
       @enderror
+
 
         <div class="row">
           <!-- /.col -->
@@ -67,7 +67,18 @@
           <!-- /.col -->
         </div>
       </form>
+        <a href="#" class="btn btn-block btn-danger">
+          <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
+        </a>
+      </div>
+      <!-- /.social-auth-links -->
 
+      <p class="mb-1">
+        <a href="forgot-password.html">Lupa Password</a>
+      </p>
+      <p class="mb-0">
+        <a href="/user/register" class="text-center">Register akun baru</a>
+      </p>
     </div>
     <!-- /.card-body -->
   </div>

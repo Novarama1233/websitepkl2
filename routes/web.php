@@ -27,7 +27,7 @@ Route::get('/testimoni', [HomeController::class, 'testimoni']);
 // untuk user
 Route::get('/user/register', [RegisterController::class, 'register'])->name('register');
 Route::post('/user/register', [RegisterController::class, 'store'])->name('register.store');
-Route::get('/user/login', [AuthUserController::class, 'userlogin'])->name('user.login');
+Route::get('/user/login', [AuthUserController::class, 'userlogin'])->name('userlogin');
 Route::post('/user/login', [AuthUserController::class, 'authenticated']);
 
 
@@ -43,9 +43,9 @@ Route::get('/dashboard', [DashboardUserController::class, 'index']);
 Route::get('/admin/login', [AuthController::class, 'login'])->name('login');
 Route::post('/admin/login', [AuthController::class, 'authenticated']);
 
-Route::prefix('/admin')->middleware('auth:admin')->group(function () {
+Route::prefix('/admin')->middleware('auth:admin')->name('admin.')->group(function () {
 Route::get('/logout', [AuthController::class, 'logout']);
-Route::get('/dashboard', [DashboardController::class, 'index']);
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 Route::resource('sliders', SliderController::class);
 Route::resource('services', ServiceController::class);

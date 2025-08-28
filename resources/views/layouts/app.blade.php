@@ -114,6 +114,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <p>Data Teams</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="/pemesanan" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Pemesanan</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/riwayat" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Riwayat Pemesanan</p>
+                </a>
+              </li>
           <li class="nav-item">
             <a href="/admin/about" class="nav-link">
               <i class="nav-icon fas fa-user"></i>

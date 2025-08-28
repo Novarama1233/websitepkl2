@@ -31,7 +31,7 @@
       </div>
       @enderror
 
-      <form method="post">
+      <form method="post" action="{{ url('/admin/login') }}">
         @csrf
         <div class="input-group mb-3">
           <input type="text" class="form-control" placeholder="Email" name="email">

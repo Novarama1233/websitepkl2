@@ -70,21 +70,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Pemesanan/Booking     
+                Booking     
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/pemesanan" class="nav-link">
+                <a href="/user/bookings" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Pemesanan</p>
+                  <p>Booking</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="/riwayat" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Riwayat Pemesanan</p>
+                  <p>Riwayat Booking</p>
                 </a>
               </li>
           <li class="nav-item">
@@ -104,7 +104,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </a>
           </li>
           <li class="nav-item">
-            <a href="/admin/login" class="nav-link">
+            <a href="/user/login" class="nav-link">
               <i class="nav-icon fas fa-sign"></i>
               <p>
                 Logout

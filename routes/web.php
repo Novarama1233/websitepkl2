@@ -79,10 +79,12 @@ Route::prefix('admin')->group(function () {
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
 
         // Bookings
+
         Route::get('/bookings', [AdminBookingController::class, 'index'])->name('admin.bookings.index');
         Route::post('/bookings/{booking}/confirm', [AdminBookingController::class, 'confirm'])->name('admin.bookings.confirm');
         Route::post('/bookings/{booking}/cancel', [AdminBookingController::class, 'cancel'])->name('admin.bookings.cancel');
-        Route::post('/bookings/{booking}/cancel', [AdminBookingController::class, 'reject'])->name('admin.bookings.reject');
+        Route::post('/bookings/{booking}/reject', [AdminBookingController::class, 'reject'])->name('admin.bookings.reject');
+        Route::post('/bookings/{booking}/cancel', [AdminBookingController::class, 'cancelreject'])->name('admin.bookings.cancelreject');
         Route::put('/bookings/{booking}', [AdminBookingController::class, 'update'])->name('admin.bookings.update');
         Route::delete('/bookings/{booking}', [AdminBookingController::class, 'destroy'])->name('admin.bookings.destroy');
 

@@ -30,22 +30,33 @@
                         <td>{{ $booking->status }}</td>
                         <td>
     @if($booking->status === 'pending')
-        <form action="{{ route('admin.bookings.confirm', $booking->id) }}" method="POST" style="display:inline;">
-            @csrf
-            <button type="submit" class="btn btn-success btn-sm">Konfirmasi</button>
-        </form> 
-        <form action="{{ route('admin.bookings.reject', $booking->id) }}" method="POST" style="display: inline;">
-            @csrf
-            <button type="submit" class="btn btn-danger btn-sm">Tolak</button>
-        </form>
-    @elseif($booking->status === 'confirmed')
-        <form action="{{ route('admin.bookings.cancel', $booking->id) }}" method="POST" style="display:inline;">
-            @csrf
-            <button type="submit" class="btn btn-warning btn-sm">Batalkan Konfirmasi</button>
-        </form>
-        @elseif($booking->status === 'ditolak')
-        <span class="badge bg-danger">Ditolak</span>
-    @endif
+    {{-- Konfirmasi --}}
+    <form action="{{ route('admin.bookings.confirm', $booking->id) }}" method="POST" style="display:inline;">
+        @csrf
+        <button type="submit" class="btn btn-success btn-sm">Konfirmasi</button>
+    </form>
+    {{-- Tolak --}}
+    <form action="{{ route('admin.bookings.reject', $booking->id) }}" method="POST" style="display:inline;">
+        @csrf
+        <button type="submit" class="btn btn-danger btn-sm">Tolak</button>
+    </form>
+
+@elseif($booking->status === 'confirmed')
+    {{-- Batalkan Konfirmasi --}}
+    <form action="{{ route('admin.bookings.cancel', $booking->id) }}" method="POST" style="display:inline;">
+        @csrf
+        <button type="submit" class="btn btn-warning btn-sm">Batalkan Konfirmasi</button>
+    </form>
+
+@elseif($booking->status === 'reject')
+    {{-- Batalkan Penolakan --}}
+    <form action="{{ route('admin.bookings.cancelreject', $booking->id) }}" method="POST" style="display:inline;">
+        @csrf
+        <button type="submit" class="btn btn-primary btn-sm">Batalkan Penolakan</button>
+    </form>
+@endif
+
+
 
     <form action="{{ route('admin.bookings.destroy', $booking->id) }}" method="POST" style="display:inline;">
         @csrf

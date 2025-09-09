@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Booking;
+use Illuminate\Database\Console\Migrations\StatusCommand;
 
 class BookingController extends Controller
 {
@@ -31,7 +32,13 @@ class BookingController extends Controller
     public function reject(Booking $booking)
     {
         $booking->update(['status' => 'reject']);
-        return back()->with('succes', 'Konfirmasi Booking Ditolak');
+        return back()->with('success', 'Konfirmasi Booking Ditolak');
+    }
+
+    public function cancelreject(Booking $booking)
+    {
+        $booking->update(['status' => 'pending']);
+        return back()->with('success', 'Reject dibataslkan');
     }
 
     // Edit booking

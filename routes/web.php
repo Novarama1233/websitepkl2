@@ -19,6 +19,7 @@ use App\Http\Controllers\RegisterController; // User Register
 use App\Http\Controllers\AuthUserController; // User Auth
 use App\Http\Controllers\Admin\BookingController as AdminBookingController;
 use App\Http\Controllers\User\BookingController as UserBookingController;
+use App\Models\Admin;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,12 +54,16 @@ Route::prefix('user')->group(function () {
 
         // Bookings
         Route::get('/bookings', [UserBookingController::class, 'index'])->name('user.bookings.index');
+        Route::get('/bookings/history', [UserBookingController::class, 'history'])->name('user.bookings.history');
         Route::get('/bookings/create', [UserBookingController::class, 'create'])->name('user.bookings.create');
         Route::get('/bookings/{booking}/edit', [UserBookingController::class, 'edit'])->name('user.bookings.edit');
         Route::post('/bookings', [UserBookingController::class, 'store'])->name('user.bookings.store');
         Route::put('/bookings/{booking}', [UserBookingController::class, 'update'])->name('user.bookings.update');
         Route::delete('/bookings/{booking}', [UserBookingController::class, 'destroy'])->name('user.bookings.destroy');
         Route::get('/bookings/{booking}', [UserBookingController::class, 'show'])->name('user.bookings.show');
+        Route::get('/bookings/{booking}/claim', [UserBookingController::class, 'claimWarranty'])->name('user.bookings.claim');
+
+
 
     }); 
 });
@@ -81,10 +86,12 @@ Route::prefix('admin')->group(function () {
         // Bookings
 
         Route::get('/bookings', [AdminBookingController::class, 'index'])->name('admin.bookings.index');
+        Route::get('/bookings/history', [AdminBookingController::class, 'history'])->name('admin.bookings.history');
+        Route::post('/bookings/{booking}/finish', [UserBookingController::class, 'finish'])->name('user.bookings.finish');
         Route::post('/bookings/{booking}/confirm', [AdminBookingController::class, 'confirm'])->name('admin.bookings.confirm');
-        Route::post('/bookings/{booking}/cancel', [AdminBookingController::class, 'cancel'])->name('admin.bookings.cancel');
+        Route::post('/bookings/{booking}/cancelconfirm', [AdminBookingController::class, 'cancel'])->name('admin.bookings.cancel');
         Route::post('/bookings/{booking}/reject', [AdminBookingController::class, 'reject'])->name('admin.bookings.reject');
-        Route::post('/bookings/{booking}/cancel', [AdminBookingController::class, 'cancelreject'])->name('admin.bookings.cancelreject');
+        Route::post('/bookings/{booking}/cancelreject', [AdminBookingController::class, 'cancelreject'])->name('admin.bookings.cancelreject');
         Route::put('/bookings/{booking}', [AdminBookingController::class, 'update'])->name('admin.bookings.update');
         Route::delete('/bookings/{booking}', [AdminBookingController::class, 'destroy'])->name('admin.bookings.destroy');
 

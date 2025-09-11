@@ -56,6 +56,14 @@
     </form>
 @endif
 
+@if($booking->status !== 'finished')
+    <form action="{{ route('admin.bookings.finish', $booking->id) }}" method="POST" style="display:inline;">
+        @csrf
+        <button type="submit" class="btn btn-success btn-sm">Sudah Selesai</button>
+    </form>
+@endif
+
+
 
 
     <form action="{{ route('admin.bookings.destroy', $booking->id) }}" method="POST" style="display:inline;">

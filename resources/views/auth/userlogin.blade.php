@@ -47,13 +47,14 @@
       @enderror
 
         <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Password" name="password">
+          <input id="password" type="password" class="form-control" placeholder="Password" name="password" aria-describedby="togglePassword" autocomplete="current-password">
           <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-lock"></span>
-            </div>
+            <button id="togglePassword" type="button" class="btn btn-outline-secondary" title="Tampilkan/Sembunyikan password" aria-label="Tampilkan atau sembunyikan password">
+              <i id="togglePasswordIcon" class="fas fa-eye"></i>
+            </button>
           </div>
         </div>
+
          @error('password')
       <small style="color:red">{{ $message }}</small>
       @enderror
@@ -92,5 +93,28 @@
 <script src="/lte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="/lte/dist/js/adminlte.min.js"></script>
+<script>
+  (function () {
+    const toggleBtn = document.getElementById('togglePassword');
+    const passInput = document.getElementById('password');
+    const icon = document.getElementById('togglePasswordIcon');
+
+    if (!toggleBtn || !passInput || !icon) return;
+
+    toggleBtn.addEventListener('click', function () {
+      const isPassword = passInput.getAttribute('type') === 'password';
+      passInput.setAttribute('type', isPassword ? 'text' : 'password');
+
+      // ganti icon
+      icon.classList.toggle('fa-eye');
+      icon.classList.toggle('fa-eye-slash');
+
+      // untuk aksesibilitas: update aria-pressed
+      const pressed = isPassword ? 'true' : 'false';
+      toggleBtn.setAttribute('aria-pressed', pressed);
+    });
+  })();
+</script>
+
 </body>
 </html>

@@ -42,19 +42,20 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Password" name="password">
+          <input id="password" type="password" class="form-control" placeholder="Password" name="password" autocomplete="new-password">
           <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-lock"></span>
-            </div>
+            <button id="togglePassword" type="button" class="btn btn-outline-secondary">
+              <i id="togglePasswordIcon" class="fas fa-eye"></i>
+            </button>
           </div>
         </div>
+
         <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Konfirmasi Password" name="password_confirmation">
+          <input id="password_confirmation" type="password" class="form-control" placeholder="Konfirmasi Password" name="password_confirmation" autocomplete="new-password">
           <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-lock"></span>
-            </div>
+            <button id="toggleConfirm" type="button" class="btn btn-outline-secondary">
+              <i id="toggleConfirmIcon" class="fas fa-eye"></i>
+            </button>
           </div>
         </div>
         <div class="row">
@@ -82,5 +83,30 @@
 <script src="/lte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="/lte/dist/js/adminlte.min.js"></script>
+<script>
+  function togglePasswordVisibility(inputId, iconId) {
+    const input = document.getElementById(inputId);
+    const icon = document.getElementById(iconId);
+
+    if (input.type === "password") {
+      input.type = "text";
+      icon.classList.remove("fa-eye");
+      icon.classList.add("fa-eye-slash");
+    } else {
+      input.type = "password";
+      icon.classList.remove("fa-eye-slash");
+      icon.classList.add("fa-eye");
+    }
+  }
+
+  document.getElementById("togglePassword").addEventListener("click", function() {
+    togglePasswordVisibility("password", "togglePasswordIcon");
+  });
+
+  document.getElementById("toggleConfirm").addEventListener("click", function() {
+    togglePasswordVisibility("password_confirmation", "toggleConfirmIcon");
+  });
+</script>
+
 </body>
 </html>

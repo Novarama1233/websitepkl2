@@ -87,7 +87,7 @@ Route::prefix('admin')->group(function () {
 
         Route::get('/bookings', [AdminBookingController::class, 'index'])->name('admin.bookings.index');
         Route::get('/bookings/history', [AdminBookingController::class, 'history'])->name('admin.bookings.history');
-        Route::post('/bookings/{booking}/finish', [UserBookingController::class, 'finish'])->name('user.bookings.finish');
+        Route::post('/bookings/{booking}/finish', [AdminBookingController::class, 'finish'])->name('admin.bookings.finish');
         Route::post('/bookings/{booking}/confirm', [AdminBookingController::class, 'confirm'])->name('admin.bookings.confirm');
         Route::post('/bookings/{booking}/cancelconfirm', [AdminBookingController::class, 'cancel'])->name('admin.bookings.cancel');
         Route::post('/bookings/{booking}/reject', [AdminBookingController::class, 'reject'])->name('admin.bookings.reject');

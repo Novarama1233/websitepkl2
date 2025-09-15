@@ -2,7 +2,7 @@
     use Illuminate\Support\Str;
 @endphp
 
-@extends('layouts.app')
+@extends('layouts.userapp')
 
 @section('title', 'Riwayat Booking')
 

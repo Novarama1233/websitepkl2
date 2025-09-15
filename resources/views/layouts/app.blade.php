@@ -121,7 +121,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/riwayat" class="nav-link">
+                <a href="/admin/bookings/history" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Riwayat Booking</p>
                 </a>

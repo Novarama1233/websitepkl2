@@ -39,7 +39,7 @@ class BookingController extends Controller
     // Tolak booking
     public function reject(Booking $booking)
     {
-        $booking->update(['status' => 'rejected']);
+        $booking->update(['status' => 'reject']);
         return back()->with('success', 'Booking ditolak.');
     }
 

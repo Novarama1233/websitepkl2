@@ -9,58 +9,71 @@ use Illuminate\Support\Facades\Auth;
 
 class BookingController extends Controller
 {
-    // Lihat booking milik user
+    // Lihat booking milik user (hanya aktif, belum finished)
     public function index()
     {
-    // hanya tampilkan booking yang statusnya belum "finished"
-    $bookings = Booking::where('user_id', Auth::id())
-                   ->whereNotIn('status', ['finished'])
-                   ->get();
+        $bookings = Booking::where('user_id', Auth::id())
+            ->whereNotIn('status', ['finished'])
+            ->get();
 
-
-    return view('userbookings.index', compact('bookings'));
+        return view('userbookings.index', compact('bookings'));
     }
 
+    // Lihat history booking (sudah selesai)
     public function history()
     {
         $bookings = Booking::where('user_id', Auth::id())
-                   ->where('status', 'finished')
-                   ->get();
+            ->where('status', 'finished')
+            ->get();
 
         return view('userbookings.history', compact('bookings'));
     }
 
-    
+    // Form booking baru
     public function create()
     {
         return view('userbookings.create');
     }
 
-    // Buat booking baru
+    // Simpan booking baru
     public function store(Request $request)
-{
-    $validated = $request->validate([
-        'title' => ['required', 'string', 'max:255'],
-        'date'  => ['required', 'date'],
-    ]);
+    {
+        $activeBookings = Booking::where('user_id', Auth::id())
+            ->whereIn('status', ['pending', 'confirmed'])
+            ->count();
 
-    Booking::create([
-        'user_id' => Auth::id(),
-        'title'   => $validated['title'],
-        'date'    => $validated['date'],
-        'status'  => 'pending',
-    ]);
+        if ($activeBookings >= 3) {
+            return redirect()->route('user.bookings.index')
+                ->with('error', 'Anda sudah memiliki 3 booking aktif. Selesaikan dulu sebelum membuat booking baru.');
+        }
 
-    return redirect()->route('user.bookings.index')
-                     ->with('success', 'Booking berhasil dibuat!');
-}
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'date'  => 'required|date|after_or_equal:today',
+        ]);
 
+        Booking::create([
+            'user_id' => Auth::id(),
+            'title'   => $request->title,
+            'date'    => $request->date,
+            'status'  => 'pending',
+        ]);
+
+        return redirect()->route('user.bookings.index')
+            ->with('success', 'Booking berhasil dibuat.');
+    }
 
     // Edit booking milik sendiri
     public function edit(Booking $booking)
     {
+        if ((int) $booking->user_id !== (int) Auth::id()) {
+            abort(403, 'Tidak bisa edit booking orang lain.');
+        }
+
         return view('userbookings.edit', compact('booking'));
     }
+
+    // Update booking milik sendiri
     public function update(Request $request, Booking $booking)
     {
         if ((int) $booking->user_id !== (int) Auth::id()) {
@@ -74,8 +87,11 @@ class BookingController extends Controller
 
         $booking->update($validated);
 
-        return redirect('user/bookings')->with('success', 'Booking berhasil diupdate.');
+        return redirect()->route('user.bookings.index')
+            ->with('success', 'Booking berhasil diupdate.');
     }
+
+    // Detail booking
     public function show(Booking $booking)
     {
         if ((int) $booking->user_id !== (int) Auth::id()) {
@@ -85,29 +101,29 @@ class BookingController extends Controller
         return view('userbookings.show', compact('booking'));
     }
 
+    // Klaim garansi booking
     public function claimWarranty(Booking $booking)
-{
-    // Cek kalau garansi masih berlaku{
-    if ((int) $booking->user_id !== (int) Auth::id() 
-        || !$booking->warranty_expires_at 
-        || $booking->warranty_expires_at->isPast()) {
-        
-        return back()->with('error', 'Booking tidak valid atau masa garansi sudah habis.');
+    {
+        if (
+            (int) $booking->user_id !== (int) Auth::id() ||
+            !$booking->warranty_expires_at ||
+            $booking->warranty_expires_at->isPast()
+        ) {
+            return back()->with('error', 'Booking tidak valid atau masa garansi sudah habis.');
+        }
+
+        // Generate kode garansi unik (sekali pakai, tidak disimpan)
+        $warrantyCode = strtoupper(uniqid('WRNTY'));
+
+        // Nomor WhatsApp admin (format internasional tanpa +)
+        $adminPhone = "628123456789";
+
+        // Pesan otomatis
+        $message = urlencode("Halo Admin, saya ingin klaim garansi dengan kode: {$warrantyCode} untuk booking ID {$booking->id}");
+
+        // Redirect ke WhatsApp
+        return redirect("https://wa.me/{$adminPhone}?text={$message}");
     }
-
-    // Generate kode garansi unik (hanya sekali pakai di WhatsApp, tidak disimpan)
-    $warrantyCode = strtoupper(uniqid('WRNTY'));
-
-    // Nomor WhatsApp admin (ubah ke nomor adminmu)
-    $adminPhone = "628123456789"; // format internasional tanpa +
-    
-    // Pesan otomatis
-    $message = urlencode("Halo Admin, saya ingin klaim garansi dengan kode: {$warrantyCode} untuk booking ID {$booking->id}");
-
-    // Redirect ke WhatsApp
-    return redirect("https://wa.me/{$adminPhone}?text={$message}");
-}
-
 
     // Hapus booking milik sendiri
     public function destroy(Booking $booking)
@@ -118,6 +134,7 @@ class BookingController extends Controller
 
         $booking->delete();
 
-        return back()->with('success', 'Booking berhasil dihapus.');
+        return redirect()->route('user.bookings.index')
+            ->with('success', 'Booking berhasil dihapus.');
     }
 }

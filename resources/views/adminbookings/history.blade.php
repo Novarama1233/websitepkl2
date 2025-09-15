@@ -23,7 +23,6 @@
                 <th>Tanggal Selesai</th>
                 <th>Status</th>
                 <th>Masa Garansi</th>
-                <th>Aksi</th>
             </tr>
         </thead>
         <tbody>
@@ -55,24 +54,6 @@
                             <span class="text-danger">Garansi sudah habis</span>
                         @else
                             <span class="text-muted">Belum ada garansi</span>
-                        @endif
-                    </td>
-
-                    {{-- Aksi --}}
-                    <td>
-                        @if($booking->warranty_expires_at && now()->lt($booking->warranty_expires_at))
-                            @php
-                                $warrantyCode = 'GARANSI-' . strtoupper(Str::random(8));
-                                $message = urlencode("Halo Admin, saya ingin claim garansi dengan kode: $warrantyCode");
-                            @endphp
-
-                            <a href="https://wa.me/6285891673889?text={{ $message }}"
-                               target="_blank"
-                               class="btn btn-primary btn-sm">
-                                Claim Garansi
-                            </a>
-                        @else
-                            <span class="text-muted">Tidak tersedia</span>
                         @endif
                     </td>
                 </tr>

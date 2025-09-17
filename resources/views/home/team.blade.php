@@ -17,12 +17,70 @@
   <!-- custom css -->
   <link rel="stylesheet" href="assets/css/style.css" />
 
-  <title>Company</title>
+  <title>CV Critical Performance</title>
+
+  <style>
+    /* === Tema Merah Hitam === */
+    body {
+      background-color: #111;
+      color: #eee;
+    }
+    .navbar {
+      background-color: #000 !important;
+    }
+    .navbar .nav-link,
+    .navbar-brand {
+      color: #fff !important;
+    }
+    .navbar .nav-link.active,
+    .navbar .nav-link:hover {
+      color: #e50914 !important;
+    }
+    .primary {
+      color: #e50914 !important;
+    }
+    .breadcumbs {
+      background: linear-gradient(90deg, #000, #e50914);
+    }
+    .teams {
+      background-color: #111 !important;
+      color: #fff;
+    }
+    .card {
+      background-color: #222;
+      border: 1px solid #e50914;
+    }
+    .card-title {
+      color: #e50914;
+    }
+    .footer-top {
+      background-color: #000 !important;
+    }
+    .footer-down {
+      background-color: #111 !important;
+    }
+    .btn-subscribe {
+      background-color: #e50914;
+      color: #fff;
+    }
+    .btn-subscribe:hover {
+      background-color: #b00610;
+      color: #fff;
+    }
+    .btn-to-top {
+      background-color: #e50914;
+      color: #fff;
+      border-radius: 50%;
+    }
+    .btn-to-top:hover {
+      background-color: #b00610;
+    }
+  </style>
 
   <!-- navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow shadow-sm fixed-top fy-3">
+  <nav class="navbar navbar-expand-lg navbar-dark shadow shadow-sm fixed-top fy-3">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="#"><span class="primary">COM</span>PANY</a>
+      <a class="navbar-brand fw-bold" href="#"><span class="primary">CV</span> Critical Performance</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -64,7 +122,7 @@
   <!-- end navbar -->
 
   <!-- breadcumbs  -->
-  <div class="breadcumbs py-2  ">
+  <div class="breadcumbs py-2">
     <div class="container">
       <div class="d-flex justify-content-between align-items-center text-white">
         <h2>Team</h2>
@@ -78,12 +136,12 @@
   <!-- end breadcumbs -->
 
   <!-- teams -->
-  <div class="teams bg-light mt-5 py-5">
+  <div class="teams bg-dark mt-5 py-5">
     <div class="container">
       <div class="title-container ">
-        <h2 class="text-center fw-bold ">Our Team</h2>
+        <h2 class="text-center fw-bold text-danger">Our Team</h2>
       </div>
-      <p class="text-center ">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem modi vero voluptas ea molestias eum illo, ducimus eius quisquam repellendus accusamus rerum! Repeliendus enim incidunt assumenda pariatur, quisquam evaniet numquam.</p>
+      <p class="text-center text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem modi vero voluptas ea molestias eum illo, ducimus eius quisquam repellendus accusamus rerum! Repeliendus enim incidunt assumenda pariatur, quisquam evaniet numquam.</p>
       <div class="row">
 
         @foreach($teams as $team)
@@ -105,12 +163,12 @@
 
   <!-- footer -->
   <footer class="mt-5">
-    <div class="footer-top bg-dark text-white p-5 ">
+    <div class="footer-top text-white p-5 ">
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-1"></div>
           <div class="col-md-3">
-            <h4 class="fw-bold">{{$contact->name}}</h2>
+            <h4 class="fw-bold">{{$contact->name}}</h4>
               <p>
                 {{$contact->description}}
               </p>
@@ -119,7 +177,7 @@
               <strong>Email</strong> : <span>{{$contact->email}} </span>
           </div>
           <div class="col-md-2">
-            <h4 class="fw-bold">Our Services</h2>
+            <h4 class="fw-bold">Our Services</h4>
               <ul class="list-group list-unstyled">
                 @foreach($services as $service)
                 <li class="list-item">
@@ -132,7 +190,7 @@
               </ul>
           </div>
           <div class="col-md-2">
-            <h4 class="fw-bold">Useful Links</h2>
+            <h4 class="fw-bold">Useful Links</h4>
               <ul class="list-group list-unstyled">
                 <li class="list-item">
                   <a href="" class="text-decoration-none text-white">
@@ -167,7 +225,7 @@
               </ul>
           </div>
           <div class="col-md-3">
-            <h4 class="fw-bold">Join Our Newsletter</h2>
+            <h4 class="fw-bold">Join Our Newsletter</h4>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
               </p>
@@ -181,13 +239,13 @@
         </div>
       </div>
     </div>
-    <div class="footer-down bg-darker text-white px-5 py-3">
+    <div class="footer-down text-white px-5 py-3">
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-1"></div>
           <div class="col-md-5">
             <div class="copyright">
-              &copy; Copyright <strong>Company</strong>. All Right Reserved
+              &copy; Copyright <strong>CV Critical Performance</strong>. All Right Reserved
             </div>
             <div class="credits">
               Design by me
@@ -195,19 +253,19 @@
           </div>
           <div class="col-md-5">
             <div class="social-links float-end">
-              <a href="" class="mx-2">
+              <a href="" class="mx-2 text-danger">
                 <i class="fab fa-facebook fa-2x"></i>
               </a>
-              <a href="" class="mx-2">
+              <a href="" class="mx-2 text-danger">
                 <i class="fab fa-twitter fa-2x"></i>
               </a>
-              <a href="" class="mx-2">
+              <a href="" class="mx-2 text-danger">
                 <i class="fab fa-instagram fa-2x"></i>
               </a>
-              <a href="" class="mx-2">
+              <a href="" class="mx-2 text-danger">
                 <i class="fab fa-youtube fa-2x"></i>
               </a>
-              <a href="" class="mx-2">
+              <a href="" class="mx-2 text-danger">
                 <i class="fab fa-linkedin fa-2x"></i>
               </a>
             </div>

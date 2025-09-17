@@ -15,6 +15,82 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="/lte/plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="/lte/dist/css/adminlte.min.css">
+
+  <style>
+    /* === THEME RED-BLACK (UI/UX Only) === */
+
+    /* Background utama */
+    body {
+        background-color: #111;
+    }
+
+    /* Navbar */
+    .navbar {
+        background-color: #000 !important;
+    }
+
+    .navbar-brand,
+    .nav-link {
+        color: #fff !important;
+    }
+
+    .navbar-brand .primary {
+        color: #e50914 !important;
+    }
+
+    .nav-link.active,
+    .nav-link:hover {
+        color: #e50914 !important;
+    }
+
+    /* Card highlight */
+    .card-primary.card-outline {
+        border-top: 3px solid #e50914;
+    }
+
+    /* Sidebar */
+    .main-sidebar {
+        background-color: #000 !important;
+    }
+
+    .nav-sidebar .nav-link.active {
+        background-color: #e50914 !important;
+        color: #fff !important;
+    }
+
+    .nav-sidebar .nav-link:hover {
+        background-color: #b0070f !important;
+        color: #fff !important;
+    }
+
+    /* Footer */
+    footer.main-footer {
+        background-color: #000 !important;
+        color: #fff !important;
+    }
+
+    footer a {
+        color: #e50914 !important;
+    }
+
+    footer a:hover {
+        color: #fff !important;
+    }
+
+    /* Brand */
+    .brand-link {
+        background-color: #111 !important;
+    }
+
+    .brand-text {
+        color: #e50914 !important;
+    }
+
+    /* Judul biarkan ikut default AdminLTE */
+    h1, h5 {
+        color: inherit !important;
+    }
+  </style>
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -35,7 +111,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
       <img src="#" alt="" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">Dashboard Pemesanan</span>
+      <span class="brand-text font-weight-light">CV Critical Performance</span>
     </a>
 
     <!-- Sidebar -->
@@ -146,7 +222,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
               @yield('content')
 
-
               </div>
             </div>
           </div>
@@ -176,7 +251,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       Anything you want
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; {{ date('Y') }} <a href="https://adminbengkel.io">CriticalPerformance.io</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; {{ date('Y') }} <a href="https://cvcriticalperformance.io">CV Critical Performance</a>.</strong> All rights reserved.
   </footer>
 </div>
 <!-- ./wrapper -->

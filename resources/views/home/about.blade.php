@@ -17,12 +17,112 @@
   <!-- custom css -->
   <link rel="stylesheet" href="assets/css/style.css" />
 
-  <title>Company</title>
+  <title>CV Critical Performance</title>
 
+  <style>
+    /* Tema Merah Hitam */
+    body {
+      background-color: #000;
+      color: #fff;
+    }
+
+    .navbar {
+      background-color: #111 !important;
+    }
+
+    .navbar-brand .primary {
+      color: red !important;
+    }
+
+    .nav-link {
+      color: #fff !important;
+    }
+
+    .nav-link:hover {
+      color: red !important;
+    }
+
+    .breadcumbs {
+      background-color: red;
+    }
+
+    .about-us-title,
+    .fw-bold {
+      color: red;
+    }
+
+    .teams,
+    .services,
+    .clients,
+    .portfolio-us {
+      background-color: #111 !important;
+      color: #fff;
+    }
+
+    .card {
+      background-color: #222;
+      color: #fff;
+      border: 1px solid red;
+    }
+
+    .card-title {
+      color: red;
+    }
+
+    .footer-top {
+      background-color: #111 !important;
+    }
+
+    .footer-down {
+      background-color: #000 !important;
+    }
+
+    .btn-subscribe {
+      background-color: red;
+      color: #fff;
+    }
+
+    .btn-subscribe:hover {
+      background-color: darkred;
+    }
+
+    .btn-to-top {
+      background-color: red;
+      color: #fff;
+    }
+
+    .btn-to-top:hover {
+      background-color: darkred;
+    }
+
+    .primary {
+      color: red !important;
+    }
+
+    .list-group-item {
+      background-color: transparent;
+      color: #fff;
+    }
+
+    .list-item a:hover {
+      color: red !important;
+    }
+
+    .social-links a {
+      color: red;
+    }
+
+    .social-links a:hover {
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
   <!-- navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow shadow-sm fixed-top fy-3">
+  <nav class="navbar navbar-expand-lg navbar-dark shadow shadow-sm fixed-top fy-3">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="#"><span class="primary">COM</span>PANY</a>
+      <a class="navbar-brand fw-bold" href="#"><span class="primary">CV</span> Critical Performance</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -80,49 +180,49 @@
   <!-- about -->
   <div class="container">
     <div class="row mt-5">
-        <div class="col-md-6" data-aos="fade-right">
-          <h3 class="fw-bold about-us-title">
-            {{$about->judul}}
-          </h3>
-          <p class="fw-bolder mt-4 about-us-subtitle">
-            {{$about->subjudul}}
-          </p>
-        </div>
-        <div class="col-md-6" data-aos="fade-left">
-          <p>
-            {{$about->deskripsi_1}}
-          </p>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">
-              <i class="fa fa-check-double primary"></i>
-              {{$about->kelebihan_1}}
-            </li>
-            <li class="list-group-item">
-              <i class="fa fa-check-double primary"></i>
-              {{$about->kelebihan_2}}
-            </li>
-            <li class="list-group-item">
-              <i class="fa fa-check-double primary"></i>
-              {{$about->kelebihan_3}}
-            </li>
-            <li class="list-group-item">
-              <i class="fa fa-check-double primary"></i>
-              {{$about->kelebihan_4}}
-            </li>
-          </ul>
-          <p class="mt-2">
-            {{$about->deskripsi_2}}
-          </p>
-        </div>
+      <div class="col-md-6" data-aos="fade-right">
+        <h3 class="fw-bold about-us-title">
+          {{$about->judul}}
+        </h3>
+        <p class="fw-bolder mt-4 about-us-subtitle">
+          {{$about->subjudul}}
+        </p>
       </div>
+      <div class="col-md-6" data-aos="fade-left">
+        <p>
+          {{$about->deskripsi_1}}
+        </p>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <i class="fa fa-check-double primary"></i>
+            {{$about->kelebihan_1}}
+          </li>
+          <li class="list-group-item">
+            <i class="fa fa-check-double primary"></i>
+            {{$about->kelebihan_2}}
+          </li>
+          <li class="list-group-item">
+            <i class="fa fa-check-double primary"></i>
+            {{$about->kelebihan_3}}
+          </li>
+          <li class="list-group-item">
+            <i class="fa fa-check-double primary"></i>
+            {{$about->kelebihan_4}}
+          </li>
+        </ul>
+        <p class="mt-2">
+          {{$about->deskripsi_2}}
+        </p>
+      </div>
+    </div>
   </div>
   <!-- end about -->
 
   <!-- teams -->
-  <div class="teams bg-light mt-5 py-5">
+  <div class="teams bg-black mt-5 py-5">
     <div class="container">
       <div class="title-container ">
-        <h2 class="text-center fw-bold ">Our Team</h2>
+        <h2 class="text-center fw-bold text-danger">Our Team</h2>
       </div>
       <p class="text-center ">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem modi vero voluptas ea molestias eum illo, ducimus eius quisquam repellendus accusamus rerum! Repeliendus enim incidunt assumenda pariatur, quisquam evaniet numquam.</p>
       <div class="row">
@@ -148,7 +248,7 @@
   <div class="clients mt-5">
     <div class="container">
       <div class="title-container">
-        <h2 class="text-center fw-bold">CLIENTS</h2>
+        <h2 class="text-center fw-bold text-danger">CLIENTS</h2>
       </div>
       <div class="row mt-5">
         @foreach($clients as $client)
@@ -168,73 +268,73 @@
         <div class="row">
           <div class="col-md-1"></div>
           <div class="col-md-3">
-            <h4 class="fw-bold">{{$contact->name}}</h2>
-              <p>
-                {{$contact->description}}
-              </p>
-              <strong>Phone</strong> : <span>{{$contact->telepon}} </span>
-              <br />
-              <strong>Email</strong> : <span>{{$contact->email}} </span>
+            <h4 class="fw-bold">{{$contact->name}}</h4>
+            <p>
+              {{$contact->description}}
+            </p>
+            <strong>Phone</strong> : <span>{{$contact->telepon}} </span>
+            <br />
+            <strong>Email</strong> : <span>{{$contact->email}} </span>
           </div>
           <div class="col-md-2">
-            <h4 class="fw-bold">Our Services</h2>
-              <ul class="list-group list-unstyled">
-                @foreach($services as $service)
-                <li class="list-item">
-                  <a href="" class="text-decoration-none text-white">
-                    <i class="fa fa-chevron-right primary"></i>
-                    {{$service->title}}
-                  </a>
-                </li>
-                @endforeach
-              </ul>
+            <h4 class="fw-bold">Our Services</h4>
+            <ul class="list-group list-unstyled">
+              @foreach($services as $service)
+              <li class="list-item">
+                <a href="" class="text-decoration-none text-white">
+                  <i class="fa fa-chevron-right primary"></i>
+                  {{$service->title}}
+                </a>
+              </li>
+              @endforeach
+            </ul>
           </div>
           <div class="col-md-2">
-            <h4 class="fw-bold">Useful Links</h2>
-              <ul class="list-group list-unstyled">
-                <li class="list-item">
-                  <a href="" class="text-decoration-none text-white">
-                    <i class="fa fa-chevron-right primary"></i>
-                    Home
-                  </a>
-                </li>
-                <li class="list-item">
-                  <a href="" class="text-decoration-none text-white">
-                    <i class="fa fa-chevron-right primary"></i>
-                    About Us
-                  </a>
-                </li>
-                <li class="list-item">
-                  <a href="" class="text-decoration-none text-white">
-                    <i class="fa fa-chevron-right primary"></i>
-                    Services
-                  </a>
-                </li>
-                <li class="list-item">
-                  <a href="" class="text-decoration-none text-white">
-                    <i class="fa fa-chevron-right primary"></i>
-                    Portfolio
-                  </a>
-                </li>
-                <li class="list-item">
-                  <a href="" class="text-decoration-none text-white">
-                    <i class="fa fa-chevron-right primary"></i>
-                    Contact
-                  </a>
-                </li>
-              </ul>
+            <h4 class="fw-bold">Useful Links</h4>
+            <ul class="list-group list-unstyled">
+              <li class="list-item">
+                <a href="" class="text-decoration-none text-white">
+                  <i class="fa fa-chevron-right primary"></i>
+                  Home
+                </a>
+              </li>
+              <li class="list-item">
+                <a href="" class="text-decoration-none text-white">
+                  <i class="fa fa-chevron-right primary"></i>
+                  About Us
+                </a>
+              </li>
+              <li class="list-item">
+                <a href="" class="text-decoration-none text-white">
+                  <i class="fa fa-chevron-right primary"></i>
+                  Services
+                </a>
+              </li>
+              <li class="list-item">
+                <a href="" class="text-decoration-none text-white">
+                  <i class="fa fa-chevron-right primary"></i>
+                  Portfolio
+                </a>
+              </li>
+              <li class="list-item">
+                <a href="" class="text-decoration-none text-white">
+                  <i class="fa fa-chevron-right primary"></i>
+                  Contact
+                </a>
+              </li>
+            </ul>
           </div>
           <div class="col-md-3">
-            <h4 class="fw-bold">Join Our Newsletter</h2>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              </p>
-              <div class="input-group">
-                <input type="text" class="form-control" placeholder="yourmail@example.com" />
-                <button class="btn btn-subscribe" type="button" id="inputGroupFileAddon04">
-                  Subscribe
-                </button>
-              </div>
+            <h4 class="fw-bold">Join Our Newsletter</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </p>
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="yourmail@example.com" />
+              <button class="btn btn-subscribe" type="button" id="inputGroupFileAddon04">
+                Subscribe
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -245,7 +345,7 @@
           <div class="col-md-1"></div>
           <div class="col-md-5">
             <div class="copyright">
-              &copy; Copyright <strong>Company</strong>. All Right Reserved
+              &copy; Copyright <strong>CV Critical Performance</strong>. All Right Reserved
             </div>
             <div class="credits">
               Design by me
@@ -289,6 +389,6 @@
   <script src="assets/vendor/aos/dist/aos.js"></script>
   <script src="assets/vendor/isotope/isotope.pkgd.min.js"></script>
   <script src="assets/js/app.js"></script>
-  </body>
+</body>
 
 </html>

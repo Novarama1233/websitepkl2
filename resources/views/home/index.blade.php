@@ -17,14 +17,76 @@
   <!-- custom css -->
   <link rel="stylesheet" href="assets/css/style.css">
 
-  <title>Company</title>
+  <title>CV Critical Performance</title>
+
+  <style>
+    /* Tambahan tema merah hitam */
+    body {
+      background-color: #111;
+      color: #fff;
+    }
+
+    .navbar {
+      background-color: #000 !important;
+    }
+
+    .navbar .nav-link,
+    .navbar-brand {
+      color: #fff !important;
+    }
+
+    .navbar .nav-link.active,
+    .navbar .nav-link:hover {
+      color: #ff0000 !important;
+    }
+
+    .primary {
+      color: #ff0000 !important;
+    }
+
+    .btn-subscribe,
+    .btn-primary {
+      background-color: #ff0000;
+      color: #fff;
+      border: none;
+    }
+
+    .btn-subscribe:hover,
+    .btn-primary:hover {
+      background-color: #cc0000;
+      color: #fff;
+    }
+
+    .footer-top {
+      background-color: #000 !important;
+    }
+
+    .footer-down {
+      background-color: #111 !important;
+    }
+
+    .portfolio-filters li.filter-active {
+      background-color: #ff0000 !important;
+    }
+
+    .btn-to-top {
+      background-color: #ff0000;
+      color: #fff;
+      border-radius: 50%;
+    }
+
+    .btn-to-top:hover {
+      background-color: #cc0000;
+      color: #fff;
+    }
+  </style>
 </head>
 
 <body>
   <!-- navbar -->
    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow shadow-sm fixed-top fy-3">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="#"><span class="primary">COM</span>PANY</a>
+      <a class="navbar-brand fw-bold" href="#"><span class="primary">CV</span> Critical Performance</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -313,7 +375,7 @@
           <div class="col-md-1"></div>
           <div class="col-md-5">
             <div class="copyright">
-              &copy; Copyright <strong>Company</strong>. All Right Reserved
+              &copy; Copyright <strong>CV Critical Performance</strong>. All Right Reserved
             </div>
             <div class="credits">
               Design by me

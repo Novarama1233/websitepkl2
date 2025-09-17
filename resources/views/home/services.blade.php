@@ -17,12 +17,137 @@
     <!-- custom css -->
     <link rel="stylesheet" href="assets/css/style.css" />
 
-    <title>Company</title>
+    <title>CV Critical Performance</title>
+
+    <!-- Tema merah-hitam (override minimal, tidak menghapus markup) -->
+    <style>
+        :root {
+            --cp-red: #c90000;
+            --cp-black: #0b0b0b;
+            --cp-dark: #111111;
+            --cp-white: #ffffff;
+        }
+
+        /* Background & base text */
+        body {
+            background-color: var(--cp-black);
+            color: #eaeaea;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: var(--cp-black) !important;
+            border-bottom: 1px solid rgba(255, 0, 0, 0.06);
+        }
+
+        .navbar-brand,
+        .nav-link {
+            color: var(--cp-white) !important;
+        }
+
+        .navbar-brand .primary {
+            color: var(--cp-red);
+        }
+
+        .nav-link.active,
+        .nav-link:hover {
+            color: var(--cp-red) !important;
+        }
+
+        /* Breadcumbs / hero small bar */
+        .breadcumbs {
+            background-color: var(--cp-red);
+        }
+
+        .breadcumbs h2,
+        .breadcumbs ol {
+            color: var(--cp-white);
+        }
+
+        /* Sections */
+        .services,
+        .teams,
+        .clients,
+        .about-us {
+            background-color: var(--cp-dark) !important;
+            color: var(--cp-white);
+        }
+
+        /* Cards */
+        .card {
+            background-color: #0f0f0f;
+            color: var(--cp-white);
+            border: none;
+        }
+
+        .card .card-title,
+        .card .card-text,
+        .card .card-description {
+            color: var(--cp-white);
+        }
+
+        /* Accent (primary) color */
+        .primary {
+            color: var(--cp-red) !important;
+        }
+
+        /* Subscribe button */
+        .btn-subscribe {
+            background-color: var(--cp-red);
+            color: var(--cp-white);
+            border: none;
+        }
+
+        .btn-subscribe:hover {
+            background-color: #a80000;
+        }
+
+        /* Footer */
+        footer .footer-top {
+            background-color: var(--cp-black) !important;
+            color: var(--cp-white);
+        }
+
+        footer .footer-down {
+            background-color: #0f0f0f !important;
+            color: var(--cp-white);
+        }
+
+        /* To-top */
+        .btn-to-top {
+            background-color: var(--cp-red);
+            color: var(--cp-white);
+        }
+
+        .btn-to-top:hover {
+            background-color: #a80000;
+        }
+
+        /* testimonial image border */
+        .img-testimonial {
+            border: 3px solid var(--cp-red);
+        }
+
+        /* links hover */
+        a.text-decoration-none.text-white:hover {
+            color: var(--cp-red) !important;
+        }
+
+        /* small responsive tweaks to keep contrast */
+        @media (max-width: 768px) {
+            .breadcumbs {
+                padding: 1rem 0.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
 
     <!-- navbar -->
      <nav class="navbar navbar-expand-lg navbar-light bg-white shadow shadow-sm fixed-top fy-3">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="#"><span class="primary">COM</span>PANY</a>
+      <a class="navbar-brand fw-bold" href="#"><span class="primary">CV</span> Critical Performance</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -192,7 +317,7 @@
           <div class="col-md-1"></div>
           <div class="col-md-5">
             <div class="copyright">
-              &copy; Copyright <strong>Company</strong>. All Right Reserved
+              &copy; Copyright <strong>CV Critical Performance</strong>. All Right Reserved
             </div>
             <div class="credits">
               Design by me

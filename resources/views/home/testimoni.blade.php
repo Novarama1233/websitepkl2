@@ -17,12 +17,92 @@
   <!-- custom css -->
   <link rel="stylesheet" href="assets/css/style.css" />
 
-  <title>Company</title>
+  <!-- Tambahan CSS untuk tema merah-hitam -->
+  <style>
+    body {
+      background-color: #111;
+      color: #fff;
+    }
+
+    .navbar {
+      background-color: #000 !important;
+    }
+
+    .navbar-brand,
+    .nav-link {
+      color: #fff !important;
+    }
+
+    .navbar-brand .primary {
+      color: #ff0000;
+    }
+
+    .nav-link.active,
+    .nav-link:hover {
+      color: #ff0000 !important;
+    }
+
+    .breadcumbs {
+      background-color: #ff0000;
+    }
+
+    .breadcumbs h2,
+    .breadcumbs ol {
+      color: #fff;
+    }
+
+    .teams {
+      background-color: #222 !important;
+      color: #fff;
+    }
+
+    .card {
+      background-color: #111;
+      color: #fff;
+    }
+
+    .btn-subscribe {
+      background-color: #ff0000;
+      color: #fff;
+      border: none;
+    }
+
+    .btn-subscribe:hover {
+      background-color: #cc0000;
+    }
+
+    footer .bg-dark {
+      background-color: #000 !important;
+    }
+
+    footer .bg-darker {
+      background-color: #111 !important;
+    }
+
+    .primary {
+      color: #ff0000 !important;
+    }
+
+    .btn-to-top {
+      background-color: #ff0000;
+      color: #fff;
+    }
+
+    .btn-to-top:hover {
+      background-color: #cc0000;
+    }
+
+    a.text-white:hover {
+      color: #ff0000 !important;
+    }
+  </style>
+
+  <title>CV Critical Performance</title>
 
   <!-- navbar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-white shadow shadow-sm fixed-top fy-3">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="#"><span class="primary">COM</span>PANY</a>
+      <a class="navbar-brand fw-bold" href="#"><span class="primary">CV</span> Critical Performance</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -192,7 +272,7 @@
           <div class="col-md-1"></div>
           <div class="col-md-5">
             <div class="copyright">
-              &copy; Copyright <strong>Company</strong>. All Right Reserved
+              &copy; Copyright <strong>CV Critical Performance</strong>. All Right Reserved
             </div>
             <div class="credits">
               Design by me

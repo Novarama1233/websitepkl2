@@ -17,50 +17,122 @@
     <!-- custom css -->
     <link rel="stylesheet" href="assets/css/style.css" />
 
-    <title>Company</title>
+    <title>CV Critical Performance</title>
 
+    <style>
+        /* === THEME RED-BLACK === */
+        body {
+            background-color: #111;
+            color: #fff;
+        }
+
+        .navbar {
+            background-color: #000 !important;
+        }
+
+        .navbar-brand,
+        .nav-link {
+            color: #fff !important;
+        }
+
+        .navbar-brand .primary {
+            color: #e50914 !important;
+        }
+
+        .nav-link.active,
+        .nav-link:hover {
+            color: #e50914 !important;
+        }
+
+        .breadcumbs {
+            background-color: #e50914;
+        }
+
+        .btn-submit,
+        .btn-subscribe,
+        .btn-to-top {
+            background-color: #e50914;
+            color: #fff;
+            border: none;
+        }
+
+        .btn-submit:hover,
+        .btn-subscribe:hover,
+        .btn-to-top:hover {
+            background-color: #b0070f;
+            color: #fff;
+        }
+
+        footer .footer-top {
+            background-color: #000 !important;
+        }
+
+        footer .footer-down {
+            background-color: #111 !important;
+        }
+
+        footer a {
+            color: #e50914;
+        }
+
+        footer a:hover {
+            color: #fff;
+        }
+
+        .primary {
+            color: #e50914 !important;
+        }
+
+        /* Tambahan supaya tulisan dalam card contact muncul */
+        .contact .card {
+            color: #000 !important;
+        }
+    </style>
+</head>
+
+<body>
     <!-- navbar -->
-      <nav class="navbar navbar-expand-lg navbar-light bg-white shadow shadow-sm fixed-top fy-3">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="#"><span class="primary">COM</span>PANY</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link fw-bolder" href="/">Home</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link fw-bolder dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button"
-              data-bs-toggle="dropdown" aria-expanded="false">
-              About
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <li><a class="dropdown-item" href="about">About Us</a></li>
-              <li><a class="dropdown-item" href="team">Team</a></li>
-              <li>
-                <a class="dropdown-item" href="testimoni">Testimonials</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link fw-bolder" href="services">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link fw-bolder" href="portfolio">Portfolio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link fw-bolder" href="contact">Contact</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link fw-bolder" href="/user/login">Ingin Booking?</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow shadow-sm fixed-top fy-3">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#"><span class="primary">CV</span> Critical Performance</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link fw-bolder" href="/">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link fw-bolder dropdown-toggle active" href="#" id="navbarDropdownMenuLink"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            About
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="about">About Us</a></li>
+                            <li><a class="dropdown-item" href="team">Team</a></li>
+                            <li>
+                                <a class="dropdown-item" href="testimoni">Testimonials</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-bolder" href="services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-bolder" href="portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-bolder" href="contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-bolder" href="/user/login">Ingin Booking?</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <!-- end navbar -->
 
     <!-- breadcumbs  -->
@@ -80,7 +152,8 @@
     <!-- contact -->
     <div class="contact mb-5">
         <div class="maps">
-        <iframe src="{{$contact->maps_emded}}" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="{{$contact->maps_emded}}" width="100%" height="450" style="border:0;" allowfullscreen=""
+                loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         <div class="container mt-5">
             <div class="row">
@@ -152,95 +225,95 @@
                 <div class="row">
                     <div class="col-md-1"></div>
                     <div class="col-md-3">
-                        <h4 class="fw-bold">Critical Performance</h2>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Repeliat
-                                consequuntur magnam commodi voluptatem quas? Itaque quo obcaecati
-                                perspiciatis quaerat ullam!
-                            </p>
-                            <strong>Phone</strong> : <span>+628382223170 </span>
-                            <br />
-                            <strong>Email</strong> : <span>info@company.org </span>
+                        <h4 class="fw-bold">CV Critical Performance</h4>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repeliat
+                            consequuntur magnam commodi voluptatem quas? Itaque quo obcaecati
+                            perspiciatis quaerat ullam!
+                        </p>
+                        <strong>Phone</strong> : <span>+628382223170 </span>
+                        <br />
+                        <strong>Email</strong> : <span>info@cvcriticalperformance.org </span>
                     </div>
                     <div class="col-md-2">
-                        <h4 class="fw-bold">Service Ecu</h2>
-                            <ul class="list-group list-unstyled">
-                                <li class="list-item">
-                                    <a href="" class="text-decoration-none text-white">
-                                        <i class="fa fa-chevron-right primary"></i>
-                                        Web Development
-                                    </a>
-                                </li>
-                                <li class="list-item">
-                                    <a href="" class="text-decoration-none text-white">
-                                        <i class="fa fa-chevron-right primary"></i>
-                                        Web Design
-                                    </a>
-                                </li>
-                                <li class="list-item">
-                                    <a href="" class="text-decoration-none text-white">
-                                        <i class="fa fa-chevron-right primary"></i>
-                                        Online Marketting
-                                    </a>
-                                </li>
-                                <li class="list-item">
-                                    <a href="" class="text-decoration-none text-white">
-                                        <i class="fa fa-chevron-right primary"></i>
-                                        Graphic Design
-                                    </a>
-                                </li>
-                                <li class="list-item">
-                                    <a href="" class="text-decoration-none text-white">
-                                        <i class="fa fa-chevron-right primary"></i>
-                                        Photography
-                                    </a>
-                                </li>
-                            </ul>
+                        <h4 class="fw-bold">Service Ecu</h4>
+                        <ul class="list-group list-unstyled">
+                            <li class="list-item">
+                                <a href="" class="text-decoration-none text-white">
+                                    <i class="fa fa-chevron-right primary"></i>
+                                    Web Development
+                                </a>
+                            </li>
+                            <li class="list-item">
+                                <a href="" class="text-decoration-none text-white">
+                                    <i class="fa fa-chevron-right primary"></i>
+                                    Web Design
+                                </a>
+                            </li>
+                            <li class="list-item">
+                                <a href="" class="text-decoration-none text-white">
+                                    <i class="fa fa-chevron-right primary"></i>
+                                    Online Marketting
+                                </a>
+                            </li>
+                            <li class="list-item">
+                                <a href="" class="text-decoration-none text-white">
+                                    <i class="fa fa-chevron-right primary"></i>
+                                    Graphic Design
+                                </a>
+                            </li>
+                            <li class="list-item">
+                                <a href="" class="text-decoration-none text-white">
+                                    <i class="fa fa-chevron-right primary"></i>
+                                    Photography
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                     <div class="col-md-2">
-                        <h4 class="fw-bold">Useful Links</h2>
-                            <ul class="list-group list-unstyled">
-                                <li class="list-item">
-                                    <a href="" class="text-decoration-none text-white">
-                                        <i class="fa fa-chevron-right primary"></i>
-                                        Home
-                                    </a>
-                                </li>
-                                <li class="list-item">
-                                    <a href="" class="text-decoration-none text-white">
-                                        <i class="fa fa-chevron-right primary"></i>
-                                        About Us
-                                    </a>
-                                </li>
-                                <li class="list-item">
-                                    <a href="" class="text-decoration-none text-white">
-                                        <i class="fa fa-chevron-right primary"></i>
-                                        Services
-                                    </a>
-                                </li>
-                                <li class="list-item">
-                                    <a href="" class="text-decoration-none text-white">
-                                        <i class="fa fa-chevron-right primary"></i>
-                                        Portfolio
-                                    </a>
-                                </li>
-                                <li class="list-item">
-                                    <a href="" class="text-decoration-none text-white">
-                                        <i class="fa fa-chevron-right primary"></i>
-                                        Contact
-                                    </a>
-                                </li>
-                            </ul>
+                        <h4 class="fw-bold">Useful Links</h4>
+                        <ul class="list-group list-unstyled">
+                            <li class="list-item">
+                                <a href="" class="text-decoration-none text-white">
+                                    <i class="fa fa-chevron-right primary"></i>
+                                    Home
+                                </a>
+                            </li>
+                            <li class="list-item">
+                                <a href="" class="text-decoration-none text-white">
+                                    <i class="fa fa-chevron-right primary"></i>
+                                    About Us
+                                </a>
+                            </li>
+                            <li class="list-item">
+                                <a href="" class="text-decoration-none text-white">
+                                    <i class="fa fa-chevron-right primary"></i>
+                                    Services
+                                </a>
+                            </li>
+                            <li class="list-item">
+                                <a href="" class="text-decoration-none text-white">
+                                    <i class="fa fa-chevron-right primary"></i>
+                                    Portfolio
+                                </a>
+                            </li>
+                            <li class="list-item">
+                                <a href="" class="text-decoration-none text-white">
+                                    <i class="fa fa-chevron-right primary"></i>
+                                    Contact
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                     <div class="col-md-3">
-                        <h4 class="fw-bold">Join Our Newsletter</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="yourmail@example.com" />
-                                <button class="btn btn-subscribe" type="button" id="inputGroupFileAddon04">
-                                    Subscribe
-                                </button>
-                            </div>
+                        <h4 class="fw-bold">Join Our Newsletter</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="yourmail@example.com" />
+                            <button class="btn btn-subscribe" type="button" id="inputGroupFileAddon04">
+                                Subscribe
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -252,7 +325,7 @@
                     <div class="col-md-1"></div>
                     <div class="col-md-5">
                         <div class="copyright">
-                            &copy; Copyright <strong>Company</strong>. All Right Reserved
+                            &copy; Copyright <strong>CV Critical Performance</strong>. All Right Reserved
                         </div>
                         <div class="credits">
                             Design by me
@@ -296,6 +369,6 @@
     <script src="assets/vendor/aos/dist/aos.js"></script>
     <script src="assets/vendor/isotope/isotope.pkgd.min.js"></script>
     <script src="assets/js/app.js"></script>
-    </body>
+</body>
 
 </html>

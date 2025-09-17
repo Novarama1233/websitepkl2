@@ -19,11 +19,12 @@ class BookingController extends Controller
         return view('userbookings.index', compact('bookings'));
     }
 
-    // Lihat history booking (sudah selesai)
+    // Lihat history booking (sudah selesai, tampilkan semua meskipun garansi habis)
     public function history()
     {
         $bookings = Booking::where('user_id', Auth::id())
             ->where('status', 'finished')
+            ->orderBy('created_at', 'desc')
             ->get();
 
         return view('userbookings.history', compact('bookings'));

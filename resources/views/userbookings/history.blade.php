@@ -52,7 +52,7 @@
                                 Berlaku sampai {{ $booking->warranty_expires_at->format('d-m-Y H:i') }}
                             </span>
                         @elseif($booking->warranty_expires_at)
-                            <span class="text-danger">Garansi sudah habis</span>
+                            <span class="text-danger">Masa garansi sudah habis</span>
                         @else
                             <span class="text-muted">Belum ada garansi</span>
                         @endif
@@ -62,8 +62,9 @@
                     <td>
                         @if($booking->warranty_expires_at && now()->lt($booking->warranty_expires_at))
                             @php
+                                // generate kode garansi random
                                 $warrantyCode = 'GARANSI-' . strtoupper(Str::random(8));
-                                $message = urlencode("Halo Admin, saya ingin claim garansi dengan kode: $warrantyCode");
+                                $message = urlencode("Halo Admin, saya ingin claim garansi dengan kode: $warrantyCode untuk booking ID {$booking->id}");
                             @endphp
 
                             <a href="https://wa.me/6285891673889?text={{ $message }}"
@@ -71,6 +72,8 @@
                                class="btn btn-primary btn-sm">
                                 Claim Garansi
                             </a>
+                        @elseif($booking->warranty_expires_at)
+                            <span class="text-muted">Masa garansi habis</span>
                         @else
                             <span class="text-muted">Tidak tersedia</span>
                         @endif

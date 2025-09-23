@@ -17,6 +17,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\RegisterController; // User Register
 use App\Http\Controllers\AuthUserController; // User Auth
+use App\Http\Controllers\ForgetPasswordController;
 use App\Http\Controllers\Admin\BookingController as AdminBookingController;
 use App\Http\Controllers\User\BookingController as UserBookingController;
 use App\Models\Admin;
@@ -46,6 +47,17 @@ Route::prefix('user')->group(function () {
 
     Route::get('/login', [AuthUserController::class, 'userlogin'])->name('userlogin');
     Route::post('/login', [AuthUserController::class, 'authenticated']);
+
+    Route::get('/forget-password', [ForgetPasswordController::class, 'showLinkRequestForm'])->name('password.request');
+    Route::post('/forget-password', [ForgetPasswordController::class, 'sendResetCode'])->name('password.email');
+
+    Route::get('/verify-code', [ForgetPasswordController::class, 'showVerifyForm'])->name('password.verify.form');
+    Route::post('/verify-code', [ForgetPasswordController::class, 'verifyCode'])->name('password.verify');
+
+    Route::get('/reset-password', [ForgetPasswordController::class, 'showResetForm'])->name('password.reset.form');
+    Route::post('/reset-password', [ForgetPasswordController::class, 'reset'])
+    ->name('user.password.reset');
+
 
     // Protected user routes
     Route::middleware('auth:web')->group(function () {

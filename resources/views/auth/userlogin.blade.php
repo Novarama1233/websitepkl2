@@ -75,7 +75,7 @@
       <!-- /.social-auth-links -->
 
       <p class="mb-1">
-        <a href="forgot-password.html">Lupa Password</a>
+        <a href="/user/forget-password">Lupa Password</a>
       </p>
       <p class="mb-0">
         <a href="/user/register" class="text-center">Register akun baru</a>

@@ -48,6 +48,12 @@ class ForgetPasswordController extends Controller
         // simpan email ke session
         session(['reset_email' => $request->email]);
 
+        // 🔎 DEBUG
+        logger('OTP dikirim', [
+            'email' => $request->email,
+            'otp' => $otp,
+        ]);
+
         // langsung arahkan ke form OTP
         return redirect()->route('password.verify.form')
             ->with('success', 'Kode verifikasi sudah dikirim ke email Anda.');
@@ -72,6 +78,13 @@ class ForgetPasswordController extends Controller
 
         $email = session('reset_email');
         $record = DB::table('password_reset_tokens')->where('email', $email)->first();
+
+        // 🔎 DEBUG
+        logger('Verifikasi OTP', [
+            'input_token' => $request->token,
+            'db_token' => $record->token ?? null,
+            'email' => $email,
+        ]);
 
         // validasi token & expiry (10 menit)
         if ($record && 
@@ -104,26 +117,38 @@ class ForgetPasswordController extends Controller
     // 6. Update password user
     // ======================
     public function reset(Request $request)
-{
-    $request->validate([
-        'password' => 'required|min:6|confirmed',
-    ]);
+    {
+        $request->validate([
+            'password' => 'required|min:6|confirmed',
+        ]);
 
-    $email = session('reset_email'); // ambil email dari session
-    $user = User::where('email', $email)->first();
+        $email = session('reset_email'); // ambil email dari session
+        $user = User::where('email', $email)->first();
 
-    if ($user) {
-        $user->password = Hash::make($request->password);
-        $user->save();
+        // 🔎 DEBUG
+        logger('Proses reset password', [
+            'email' => $email,
+            'user_found' => $user ? true : false,
+        ]);
 
-        // hapus token & session
-        DB::table('password_reset_tokens')->where('email', $email)->delete();
-        session()->forget(['reset_email', 'reset_verified']);
+        if ($user) {
+            $user->password = Hash::make($request->password);
+            $user->save();
 
-        // redirect ke login user
-        return redirect('/user/login')->with('success', 'Password berhasil diubah. Silakan login dengan password baru.');
-    }
+            // hapus token & session
+            DB::table('password_reset_tokens')->where('email', $email)->delete();
+            session()->forget(['reset_email', 'reset_verified']);
 
-    return back()->with('error', 'Gagal reset password, coba lagi.');
+            // 🔎 DEBUG
+            logger('Password berhasil direset', [
+                'email' => $email,
+            ]);
+
+            // redirect ke login user
+            return redirect()->route('userlogin')
+                ->with('success', 'Password berhasil diubah. Silakan login dengan password baru.');
+        }
+
+        return back()->with('error', 'Gagal reset password, coba lagi.');
     }
 }

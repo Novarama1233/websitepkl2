@@ -10,10 +10,14 @@ class BookingController extends Controller
 {
     // Lihat semua booking yang belum selesai
     public function index()
-    {
-        $bookings = Booking::where('status', '!=', 'finished')->get();
-        return view('adminbookings.index', compact('bookings'));
-    }
+{
+    $bookings = Booking::with(['user', 'service'])
+        ->where('status', '!=', 'finished')
+        ->get();
+
+    return view('adminbookings.index', compact('bookings'));
+}
+
 
     // Riwayat booking selesai
     public function history()

@@ -10,6 +10,16 @@ class Service extends Model
     use HasFactory;
 
     protected $fillable = [
-        'title','description','image'
+        'title',
+        'description',
+        'image',
     ];
+
+    /**
+     * Relasi: Satu service bisa dipakai oleh banyak booking
+     */
+    public function bookings()
+    {
+        return $this->hasMany(Booking::class);
+    }
 }

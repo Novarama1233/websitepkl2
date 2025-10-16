@@ -13,10 +13,22 @@ return new class extends Migration
     {
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
+
+            // Relasi ke User
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+
+            // Relasi ke Service (nullable biar kalau service dihapus booking tetap ada)
+            $table->foreignId('service_id')->nullable()->constrained()->nullOnDelete();
+
+            // Informasi booking
             $table->string('title');
             $table->date('date');
             $table->string('status')->default('pending');
+
+            // Tambahan untuk garansi
+            $table->timestamp('finished_at')->nullable();
+            $table->timestamp('warranty_expires_at')->nullable();
+
             $table->timestamps();
         });
     }
@@ -24,7 +36,7 @@ return new class extends Migration
     /**
      * Reverse the migrations.
      */
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('bookings');
     }

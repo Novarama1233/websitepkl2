@@ -13,7 +13,6 @@ class ServiceController extends Controller
     public function index()
     {
         $services = Service::all();
-
         return view('service.index', compact('services'));
     }
 
@@ -31,14 +30,17 @@ class ServiceController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required','description' => 'required','image' =>  'required|image',
+            'title' => 'required|string|max:255',
+            'description' => 'required|string',
+            'image' => 'required|image|mimes:jpeg,png,jpg,svg,webp|max:2048',
+            'is_active' => 'required|boolean',
         ]);
 
         $input = $request->all();
 
         if ($image = $request->file('image')) {
             $destinationPath = 'image/';
-            $imageName = $image->getClientOriginalName();
+            $imageName = time() . '_' . $image->getClientOriginalName();
             $image->move($destinationPath, $imageName);
             $input['image'] = $imageName;
         }
@@ -46,14 +48,6 @@ class ServiceController extends Controller
         Service::create($input);
 
         return redirect('/admin/services')->with('message', 'Data Berhasil Ditambahkan');
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Service $service)
-    {
-        //
     }
 
     /**
@@ -68,29 +62,29 @@ class ServiceController extends Controller
      * Update the specified resource in storage.
      */
     public function update(Request $request, Service $service)
-{
-    $request->validate([
-        'title' => 'required',
-        'description' => 'required',
-        'image' => 'required|mimes:jpeg,png,jpg,svg,webp',
-    ]);
+    {
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'required|string',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,svg,webp|max:2048',
+            'is_active' => 'required|boolean',
+        ]);
 
-    $input = $request->all();
+        $input = $request->all();
 
-    if ($image = $request->file('image')) {
-        $destinationPath = 'image/';
-        $imageName = $image->getClientOriginalName();
-        $image->move($destinationPath, $imageName);
-        $input['image'] = $imageName;
-    } else {
-        unset($input['image']);
+        if ($image = $request->file('image')) {
+            $destinationPath = 'image/';
+            $imageName = time() . '_' . $image->getClientOriginalName();
+            $image->move($destinationPath, $imageName);
+            $input['image'] = $imageName;
+        } else {
+            unset($input['image']);
+        }
+
+        $service->update($input);
+
+        return redirect('/admin/services')->with('message', 'Data Berhasil Diedit');
     }
-
-    $service->update($input); //
-
-    return redirect('/admin/services')->with('message', 'Data Berhasil Diedit');
-}
-
 
     /**
      * Remove the specified resource from storage.
@@ -98,7 +92,6 @@ class ServiceController extends Controller
     public function destroy(Service $service)
     {
         $service->delete();
-
         return redirect('/admin/services')->with('message', 'Data Berhasil Dihapus');
     }
 }

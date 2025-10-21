@@ -31,6 +31,14 @@
                 @error('image')
                 <small style="color:red">{{$message}}</small>
                 @enderror
+                <div class="form-group mb-3">
+    <label for="is_active">Status Layanan</label>
+    <select name="is_active" id="is_active" class="form-control">
+        <option value="1" {{ $service->is_active ? 'selected' : '' }}>Aktif</option>
+        <option value="0" {{ !$service->is_active ? 'selected' : '' }}>Nonaktif</option>
+    </select>
+</div>
+
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary btn-block">Submit</button>
                 </div>

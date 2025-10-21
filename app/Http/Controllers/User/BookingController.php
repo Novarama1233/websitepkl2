@@ -42,8 +42,8 @@ class BookingController extends Controller
      */
     public function create()
     {
-        $services = Service::all();
-        return view('userbookings.create', compact('services'));
+        $services = Service::where('is_active', true)->get();
+return view('userbookings.create', compact('services'));
     }
 
     /**

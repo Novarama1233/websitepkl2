@@ -21,6 +21,7 @@ class ServiceController extends Controller
      */
     public function create()
     {
+        $service = new Service();
         return view('service.create');
     }
 

@@ -227,78 +227,42 @@
                     <div class="col-md-3">
                         <h4 class="fw-bold">CV Critical Performance</h4>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repeliat
-                            consequuntur magnam commodi voluptatem quas? Itaque quo obcaecati
-                            perspiciatis quaerat ullam!
-                        </p>
-                        <strong>Phone</strong> : <span>+628382223170 </span>
+                        <strong>Phone</strong> : <span>{{$contact->telepon}} </span>
                         <br />
-                        <strong>Email</strong> : <span>info@cvcriticalperformance.org </span>
+                        <strong>Email</strong> : <span>{{$contact->email}} </span>
                     </div>
                     <div class="col-md-2">
-                        <h4 class="fw-bold">Service Ecu</h4>
-                        <ul class="list-group list-unstyled">
-                            <li class="list-item">
-                                <a href="" class="text-decoration-none text-white">
-                                    <i class="fa fa-chevron-right primary"></i>
-                                    Web Development
-                                </a>
-                            </li>
-                            <li class="list-item">
-                                <a href="" class="text-decoration-none text-white">
-                                    <i class="fa fa-chevron-right primary"></i>
-                                    Web Design
-                                </a>
-                            </li>
-                            <li class="list-item">
-                                <a href="" class="text-decoration-none text-white">
-                                    <i class="fa fa-chevron-right primary"></i>
-                                    Online Marketting
-                                </a>
-                            </li>
-                            <li class="list-item">
-                                <a href="" class="text-decoration-none text-white">
-                                    <i class="fa fa-chevron-right primary"></i>
-                                    Graphic Design
-                                </a>
-                            </li>
-                            <li class="list-item">
-                                <a href="" class="text-decoration-none text-white">
-                                    <i class="fa fa-chevron-right primary"></i>
-                                    Photography
-                                </a>
-                            </li>
-                        </ul>
+
                     </div>
                     <div class="col-md-2">
                         <h4 class="fw-bold">Useful Links</h4>
                         <ul class="list-group list-unstyled">
                             <li class="list-item">
-                                <a href="" class="text-decoration-none text-white">
+                                <a href="/" class="text-decoration-none text-white">
                                     <i class="fa fa-chevron-right primary"></i>
                                     Home
                                 </a>
                             </li>
                             <li class="list-item">
-                                <a href="" class="text-decoration-none text-white">
+                                <a href="about" class="text-decoration-none text-white">
                                     <i class="fa fa-chevron-right primary"></i>
                                     About Us
                                 </a>
                             </li>
                             <li class="list-item">
-                                <a href="" class="text-decoration-none text-white">
+                                <a href="service" class="text-decoration-none text-white">
                                     <i class="fa fa-chevron-right primary"></i>
                                     Services
                                 </a>
                             </li>
                             <li class="list-item">
-                                <a href="" class="text-decoration-none text-white">
+                                <a href="portfolio" class="text-decoration-none text-white">
                                     <i class="fa fa-chevron-right primary"></i>
                                     Portfolio
                                 </a>
                             </li>
                             <li class="list-item">
-                                <a href="" class="text-decoration-none text-white">
+                                <a href="contact" class="text-decoration-none text-white">
                                     <i class="fa fa-chevron-right primary"></i>
                                     Contact
                                 </a>
@@ -306,48 +270,6 @@
                         </ul>
                     </div>
                     <div class="col-md-3">
-                        <h4 class="fw-bold">Join Our Newsletter</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="yourmail@example.com" />
-                            <button class="btn btn-subscribe" type="button" id="inputGroupFileAddon04">
-                                Subscribe
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="footer-down bg-darker text-white px-5 py-3">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-1"></div>
-                    <div class="col-md-5">
-                        <div class="copyright">
-                            &copy; Copyright <strong>CV Critical Performance</strong>. All Right Reserved
-                        </div>
-                        <div class="credits">
-                            Design by me
-                        </div>
-                    </div>
-                    <div class="col-md-5">
-                        <div class="social-links float-end">
-                            <a href="" class="mx-2">
-                                <i class="fab fa-facebook fa-2x"></i>
-                            </a>
-                            <a href="" class="mx-2">
-                                <i class="fab fa-twitter fa-2x"></i>
-                            </a>
-                            <a href="" class="mx-2">
-                                <i class="fab fa-instagram fa-2x"></i>
-                            </a>
-                            <a href="" class="mx-2">
-                                <i class="fab fa-youtube fa-2x"></i>
-                            </a>
-                            <a href="" class="mx-2">
-                                <i class="fab fa-linkedin fa-2x"></i>
-                            </a>
                         </div>
                     </div>
                 </div>

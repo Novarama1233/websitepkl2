@@ -222,9 +222,6 @@
         <div class="col-md-12 d-flex justify-content-center">
           <ul class="list-unstyled d-flex portfolio-filters">
             <li data-filter="*" class="py-2 px-4 filter-active text-white">ALL</li>
-            <li data-filter=".filter-web" class="py-2 px-4">Web</li>
-            <li data-filter=".filter-design" class="py-2 px-4">Design</li>
-            <li data-filter=".filter-photo" class="py-2 px-4">Photography</li>
           </ul>
         </div>
       </div>
@@ -277,31 +274,31 @@
             <h4 class="fw-bold">Useful Links</h2>
               <ul class="list-group list-unstyled">
                 <li class="list-item">
-                  <a href="" class="text-decoration-none text-white">
+                  <a href="/" class="text-decoration-none text-white">
                     <i class="fa fa-chevron-right primary"></i>
                     Home
                   </a>
                 </li>
                 <li class="list-item">
-                  <a href="" class="text-decoration-none text-white">
+                  <a href="about" class="text-decoration-none text-white">
                     <i class="fa fa-chevron-right primary"></i>
                     About Us
                   </a>
                 </li>
                 <li class="list-item">
-                  <a href="" class="text-decoration-none text-white">
+                  <a href="service" class="text-decoration-none text-white">
                     <i class="fa fa-chevron-right primary"></i>
                     Services
                   </a>
                 </li>
                 <li class="list-item">
-                  <a href="" class="text-decoration-none text-white">
+                  <a href="portfolio" class="text-decoration-none text-white">
                     <i class="fa fa-chevron-right primary"></i>
                     Portfolio
                   </a>
                 </li>
                 <li class="list-item">
-                  <a href="" class="text-decoration-none text-white">
+                  <a href="contact" class="text-decoration-none text-white">
                     <i class="fa fa-chevron-right primary"></i>
                     Contact
                   </a>
@@ -309,49 +306,6 @@
               </ul>
           </div>
           <div class="col-md-3">
-            <h4 class="fw-bold">Join Our Newsletter</h2>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              </p>
-              <div class="input-group">
-                <input type="text" class="form-control" placeholder="yourmail@example.com" />
-                <button class="btn btn-subscribe" type="button" id="inputGroupFileAddon04">
-                  Subscribe
-                </button>
-              </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="footer-down bg-darker text-white px-5 py-3">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-1"></div>
-          <div class="col-md-5">
-            <div class="copyright">
-              &copy; Copyright <strong>CV Critical Performance</strong>. All Right Reserved
-            </div>
-            <div class="credits">
-              Design by me
-            </div>
-          </div>
-          <div class="col-md-5">
-            <div class="social-links float-end">
-              <a href="" class="mx-2">
-                <i class="fab fa-facebook fa-2x"></i>
-              </a>
-              <a href="" class="mx-2">
-                <i class="fab fa-twitter fa-2x"></i>
-              </a>
-              <a href="" class="mx-2">
-                <i class="fab fa-instagram fa-2x"></i>
-              </a>
-              <a href="" class="mx-2">
-                <i class="fab fa-youtube fa-2x"></i>
-              </a>
-              <a href="" class="mx-2">
-                <i class="fab fa-linkedin fa-2x"></i>
-              </a>
             </div>
           </div>
         </div>

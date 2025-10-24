@@ -16,14 +16,14 @@ class AboutSeeder extends Seeder
     public function run(): void
     {
         About::create([
-            'judul' => 'Company',
-            'subjudul' => 'Lorem Ipsum',
-            'deskripsi_1' => 'Lorem Ipsum',
-            'deskripsi_2' => 'Lorem Ipsum',
-            'kelebihan_1' => 'Lorem Ipsum',
-            'kelebihan_2' => 'Lorem Ipsum',
-            'kelebihan_3' => 'Lorem Ipsum',
-            'kelebihan_4' => 'Lorem Ipsum',
+            'judul' => 'Cv. Critical Performance',
+            'subjudul' => 'Bengkel Remap ecu',
+            'deskripsi_1' => 'kami menyediakan berbagai layanan',
+            'deskripsi_2' => 'banyak yang suka service di kami',
+            'kelebihan_1' => 'kami ada service remap ecu',
+            'kelebihan_2' => 'kami ada service porting polish',
+            'kelebihan_3' => 'ganti ban',
+            'kelebihan_4' => 'ganti oli',
         ]);
     }
 }
